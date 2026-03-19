@@ -1,3 +1,13 @@
 import './App.css'
+import icon from './assets/bilingual.svg'
 
-export const App = () => <h1>Bilingual JS-20</h1>
+function App() {
+    return (
+        <div className="App">
+            
+                <img src={icon} className="App-logo" alt="logo" />
+            
+        </div>
+    )
+}
+export default App
