@@ -1,68 +1,71 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
+* {
+  padding: 0;
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+#primary_1 {
+  color: #3a10e5;
+  color: #ffffff;
+  /* Background */
+  color: #d7e1f8;
+  /* font color */
+  color: #4c4859;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+#secondary_1 {
+  color: #f61414;
+  color: #2ab930;
+  /* input */
+  color: #d4d0d0;
+  color: #d8d9db;
+  color: #f7f7f7;
+  color: #6e7099;
+  color: #0f85f1;
+  /* sign in/up font */
+  color: #757575;
+  /* grey no active */
+  color: #c4c4c4;
+  /* grey icons color */
+  color: #9a9a9a;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+/* Linear blue */
+#linear_1 {
+  background: #6746ef;
+  background: linear-gradient(
+    90deg,
+    rgba(103, 70, 239, 1) 0%,
+    rgba(58, 16, 229, 1) 100%
+  );
+}
+
+/* Landing Page */
+
+#primary_2 {
+  color: #3a10e5;
+  color: #ffffff;
+  /* font color */
+  color: #23212a;
+  /* title */
+  color: #3752b4;
+}
+
+#secondary_2 {
+  color: #262626;
+  color: #666ca7;
+  color: #fe9102;
+  /* background */
+  color: #fef5e8;
+}
+
+/* Linear Pink */
+#linear_2 {
+  background: #c23677;
+  background: linear-gradient(
+    90deg,
+    rgba(194, 54, 119, 1) 0%,
+    rgba(197, 57, 122, 1) 33%,
+    rgba(196, 56, 121, 1) 66%,
+    rgba(187, 46, 111, 1) 100%
+  );
 }
