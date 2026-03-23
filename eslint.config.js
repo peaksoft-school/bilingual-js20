@@ -28,19 +28,19 @@ export default [
       react: { version: "detect" },
     },
     rules: {
-      
+      // React
       ...reactPlugin.configs.recommended.rules,
       ...reactHooks.configs.recommended.rules,
-      "react/react-in-jsx-scope": "off", 
+      "react/react-in-jsx-scope": "off", // не нужен в React 17+
       "react/jsx-filename-extension": [1, { extensions: [".js", ".jsx"] }],
       "react/jsx-props-no-spreading": "off",
       "react/function-component-definition": "off",
-      "react/prop-types": "off", 
+      "react/prop-types": "off", // если используешь TypeScript — off
 
-      
+      // Импорты
       "import/prefer-default-export": "off",
 
-      
+      // Общие
       "no-shadow": "off",
       "no-console": ["warn", { allow: ["warn", "error"] }],
       "max-len": [
@@ -53,11 +53,11 @@ export default [
         },
       ],
 
-     
+      // Хуки
       "react-hooks/rules-of-hooks": "error",
-      "react-hooks/exhaustive-deps": "warn",
+      "react-hooks/exhaustive-deps": "warn", // warn вместо off — полезно знать
 
-      
+      // Доступность
       "jsx-a11y/label-has-associated-control": [
         "error",
         {
