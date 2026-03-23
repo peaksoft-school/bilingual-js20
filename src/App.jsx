@@ -1,12 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 import { MyButton as Button } from './components/ui/Button'
-import icon from './assets/icons/bilingual.svg'
+
 
 const App = () => {
   return (
     <Container>
-      <img src={icon} alt="Bilingual Logo" />
+      
       <Row>
         <Button>+ ADD NEW TEST</Button>
         <Button variant="success">Save</Button>
