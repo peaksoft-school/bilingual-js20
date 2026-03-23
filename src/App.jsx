@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Button } from './components/ui/Button'
-import icon from './assets/bilingual.svg'
+import icon from './assets/icons/bilingual.svg'
 
 const App = () => {
   return (
