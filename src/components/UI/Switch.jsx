@@ -38,7 +38,7 @@ const Wrapper = styled.div`
   gap: 16px;
 `;
 
-/* ── Switch ── */
+/* --- Switch --- */
 const SwitchLabel = styled.label`
   font-size: 17px;
   position: relative;
