@@ -93,7 +93,7 @@ const variantStyles = {
     },
   }),
   rpaction: (disabled) => ({
-    width: 158,
+    width: 168,
     height: 42,
     background: '#ffffff',
     color: disabled ? '#bdbdbd' : '#3a10e5',
