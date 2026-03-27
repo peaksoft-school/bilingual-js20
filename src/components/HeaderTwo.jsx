@@ -1,9 +1,9 @@
 import React from 'react'
 import { Box, Typography } from '@mui/material'
 import bilingualImg from '../assets/icons/images/bilingual.png'
-import { LogoutButton } from '../components/ui/LogoutButton' 
+import { LogoutButton } from '../components/ui/LogoutButton'
 
-export const Header = ({ role = 'client' }) => {
+export const HeaderTwo = ({ role = 'client' }) => {
   return (
     <Box
       sx={{
@@ -23,15 +23,13 @@ export const Header = ({ role = 'client' }) => {
           px: 5,
         }}
       >
-       
         <Box component="img" src={bilingualImg} alt="logo" sx={{ height: '32px' }} />
 
-        
         <Box
           sx={{
             display: 'flex',
             alignItems: 'center',
-            gap: 8,
+            gap: 10,
           }}
         >
           <Typography
@@ -50,9 +48,10 @@ export const Header = ({ role = 'client' }) => {
               fontSize: '14px',
               color: '#4C4859',
               cursor: 'pointer',
+              
             }}
           >
-            {role === 'admin' ? 'SUBMITTED RESULTS' : 'MY RESULTS'}
+            {role === 'admin' ? 'SUBMITTED RESULTS' : 'SUBMITTED RESULTS'}
           </Typography>
 
           <LogoutButton />
@@ -61,6 +60,3 @@ export const Header = ({ role = 'client' }) => {
     </Box>
   )
 }
-
-
-
