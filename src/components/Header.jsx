@@ -3,6 +3,21 @@ import { Box, Button, Typography } from '@mui/material'
 import bilingualImg from '../assets/icons/images/bilingual.png'
 
 export const Header = ({ role = 'client' }) => {
+  // Вынесенный стиль только для кнопки LOG OUT
+  const logoutButtonStyle = {
+    borderRadius: '8px',
+    textTransform: 'none',
+    fontSize: '12px',
+    px: 2.5,
+    py: 0.7,
+    borderColor: '#121111',
+    color: '#000',
+    '&:hover': {
+      borderColor: '#aaa',
+      backgroundColor: '#f5f5f5',
+    },
+  }
+
   return (
     <Box
       sx={{
@@ -40,7 +55,6 @@ export const Header = ({ role = 'client' }) => {
             gap: 4,
           }}
         >
-          
           <Typography
             sx={{
               fontSize: '14px',
@@ -52,7 +66,6 @@ export const Header = ({ role = 'client' }) => {
             TESTS
           </Typography>
 
-          
           <Typography
             sx={{
               fontSize: '14px',
@@ -63,23 +76,8 @@ export const Header = ({ role = 'client' }) => {
             {role === 'admin' ? 'SUBMITTED RESULTS' : 'MY RESULTS'}
           </Typography>
 
-          
-          <Button
-            variant="outlined"
-            sx={{
-              borderRadius: '8px',
-              textTransform: 'none',
-              fontSize: '12px',
-              px: 2.5,
-              py: 0.7,
-              borderColor: '#121111',
-              color: '#000',
-              '&:hover': {
-                borderColor: '#aaa',
-                backgroundColor: '#f5f5f5',
-              },
-            }}
-          >
+          {/* Кнопка LOG OUT с вынесенным стилем */}
+          <Button variant="outlined" sx={logoutButtonStyle}>
             LOG OUT
           </Button>
         </Box>
