@@ -1,18 +1,18 @@
-import js from "@eslint/js";
-import globals from "globals";
-import reactPlugin from "eslint-plugin-react";
-import reactHooks from "eslint-plugin-react-hooks";
-import jsxA11y from "eslint-plugin-jsx-a11y";
-import importPlugin from "eslint-plugin-import";
-import prettierConfig from "eslint-config-prettier";
+import js from '@eslint/js'
+import globals from 'globals'
+import reactPlugin from 'eslint-plugin-react'
+import reactHooks from 'eslint-plugin-react-hooks'
+import jsxA11y from 'eslint-plugin-jsx-a11y'
+import importPlugin from 'eslint-plugin-import'
+import prettierConfig from 'eslint-config-prettier'
 
 export default [
   js.configs.recommended,
   {
-    files: ["**/*.{js,jsx}"],
+    files: ['**/*.{js,jsx}'],
     languageOptions: {
       ecmaVersion: 2024,
-      sourceType: "module",
+      sourceType: 'module',
       globals: { ...globals.browser, ...globals.es2021 },
       parserOptions: {
         ecmaFeatures: { jsx: true },
@@ -20,31 +20,28 @@ export default [
     },
     plugins: {
       react: reactPlugin,
-      "react-hooks": reactHooks,
-      "jsx-a11y": jsxA11y,
+      'react-hooks': reactHooks,
+      'jsx-a11y': jsxA11y,
       import: importPlugin,
     },
     settings: {
-      react: { version: "detect" },
+      react: { version: 'detect' },
     },
     rules: {
-      
       ...reactPlugin.configs.recommended.rules,
       ...reactHooks.configs.recommended.rules,
-      "react/react-in-jsx-scope": "off", 
-      "react/jsx-filename-extension": [1, { extensions: [".js", ".jsx"] }],
-      "react/jsx-props-no-spreading": "off",
-      "react/function-component-definition": "off",
-      "react/prop-types": "off", 
+      'react/react-in-jsx-scope': 'off',
+      'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
+      'react/jsx-props-no-spreading': 'off',
+      'react/function-component-definition': 'off',
+      'react/prop-types': 'off',
 
-      
-      "import/prefer-default-export": "off",
+      'import/prefer-default-export': 'off',
 
-      
-      "no-shadow": "off",
-      "no-console": ["warn", { allow: ["warn", "error"] }],
-      "max-len": [
-        "error",
+      'no-shadow': 'off',
+      'no-console': ['warn', { allow: ['warn', 'error'] }],
+      'max-len': [
+        'error',
         {
           code: 100,
           ignoreStrings: true,
@@ -53,22 +50,20 @@ export default [
         },
       ],
 
-     
-      "react-hooks/rules-of-hooks": "error",
-      "react-hooks/exhaustive-deps": "warn",
+      'react-hooks/rules-of-hooks': 'error',
+      'react-hooks/exhaustive-deps': 'warn',
 
-      
-      "jsx-a11y/label-has-associated-control": [
-        "error",
+      'jsx-a11y/label-has-associated-control': [
+        'error',
         {
-          required: { some: ["nesting", "id"] },
+          required: { some: ['nesting', 'id'] },
         },
       ],
     },
   },
   {
-    ignores: ["dist/**", "node_modules/**", "vite.config.js"],
+    ignores: ['dist/**', 'node_modules/**', 'vite.config.js'],
   },
 
   prettierConfig,
-];
+]
