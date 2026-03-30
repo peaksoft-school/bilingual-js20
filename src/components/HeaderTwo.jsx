@@ -54,7 +54,7 @@ export const HeaderTwo = ({ role = 'client' }) => {
             {role === 'admin' ? 'SUBMITTED RESULTS' : 'SUBMITTED RESULTS'}
           </Typography>
 
-          <LogoutButton />
+          
         </Box>
       </Box>
     </Box>
