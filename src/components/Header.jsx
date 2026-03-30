@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box, Typography } from '@mui/material'
+import { MyButton } from './ui/Button' 
 import bilingualImg from '../assets/icons/images/bilingual.png'
-import { LogoutButton } from '../components/ui/LogoutButton' 
 
 export const Header = ({ role = 'client' }) => {
   return (
@@ -23,7 +23,7 @@ export const Header = ({ role = 'client' }) => {
           px: 5,
         }}
       >
-       
+        
         <Box component="img" src={bilingualImg} alt="logo" sx={{ height: '32px' }} />
 
         
@@ -55,12 +55,10 @@ export const Header = ({ role = 'client' }) => {
             {role === 'admin' ? 'SUBMITTED RESULTS' : 'MY RESULTS'}
           </Typography>
 
-          <LogoutButton />
+         
+          <MyButton variant="outline">LOG OUT</MyButton>
         </Box>
       </Box>
     </Box>
   )
 }
-
-
-
