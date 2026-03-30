@@ -1,29 +1,69 @@
 import js from '@eslint/js'
 import globals from 'globals'
+import reactPlugin from 'eslint-plugin-react'
 import reactHooks from 'eslint-plugin-react-hooks'
-import reactRefresh from 'eslint-plugin-react-refresh'
-import { defineConfig, globalIgnores } from 'eslint/config'
+import jsxA11y from 'eslint-plugin-jsx-a11y'
+import importPlugin from 'eslint-plugin-import'
+import prettierConfig from 'eslint-config-prettier'
 
-export default defineConfig([
-  globalIgnores(['dist']),
+export default [
+  js.configs.recommended,
   {
     files: ['**/*.{js,jsx}'],
-    extends: [
-      js.configs.recommended,
-      reactHooks.configs['recommended-latest'],
-      reactRefresh.configs.vite,
-    ],
     languageOptions: {
-      ecmaVersion: 2020,
-      globals: globals.browser,
+      ecmaVersion: 2024,
+      sourceType: 'module',
+      globals: { ...globals.browser, ...globals.es2021 },
       parserOptions: {
-        ecmaVersion: 'latest',
         ecmaFeatures: { jsx: true },
-        sourceType: 'module',
       },
     },
+    plugins: {
+      react: reactPlugin,
+      'react-hooks': reactHooks,
+      'jsx-a11y': jsxA11y,
+      import: importPlugin,
+    },
+    settings: {
+      react: { version: 'detect' },
+    },
     rules: {
-      'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
+      ...reactPlugin.configs.recommended.rules,
+      ...reactHooks.configs.recommended.rules,
+      'react/react-in-jsx-scope': 'off',
+      'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
+      'react/jsx-props-no-spreading': 'off',
+      'react/function-component-definition': 'off',
+      'react/prop-types': 'off',
+
+      'import/prefer-default-export': 'off',
+
+      'no-shadow': 'off',
+      'no-console': ['warn', { allow: ['warn', 'error'] }],
+      'max-len': [
+        'error',
+        {
+          code: 100,
+          ignoreStrings: true,
+          ignoreTemplateLiterals: true,
+          ignoreRegExpLiterals: true,
+        },
+      ],
+
+      'react-hooks/rules-of-hooks': 'error',
+      'react-hooks/exhaustive-deps': 'warn',
+
+      'jsx-a11y/label-has-associated-control': [
+        'error',
+        {
+          required: { some: ['nesting', 'id'] },
+        },
+      ],
     },
   },
-])
+  {
+    ignores: ['dist/**', 'node_modules/**', 'vite.config.js'],
+  },
+
+  prettierConfig,
+]
