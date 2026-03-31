@@ -12,14 +12,14 @@ const App = () => {
         <Button variant="default">GO BACK</Button>
         <Button variant="unknown">NEXT</Button>
         <Button variant="rpaction">PRACTICE TEST</Button>
-        <Button variant="loqout">SING IN</Button>
+        <Button variant="loqout">SIGN IN</Button>
         <Button variant="outline">LOG OUT</Button>
       </Row>
     </Container>
   )
 }
 
-export default App
+export default App 
 
 const Container = styled.div`
   padding: 40px;
