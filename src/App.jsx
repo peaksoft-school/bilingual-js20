@@ -1,13 +1,13 @@
-import React from 'react'
+
 import styled from 'styled-components'
-import { MyButton as Button } from './components/ui/Button'
+
 import { Header } from './components/Header'
 
 const App = () => {
   return (
     <Container>
       <Row>
-        <Header role="client" />  
+        <Header role="client" />
         <Header role="admin" />
       </Row>
     </Container>
