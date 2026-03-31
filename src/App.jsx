@@ -1,15 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
-import { MyButton as Button } from './components/ui/Button'
-import { Header } from './components/Header'
+import { Header } from './layout/Header'
 
 const App = () => {
   return (
     <Container>
       <Row>
-        <Header role="client" />  
-        <br />
-        <Header role="admin" />
+        <Header role="client" />
+       
       </Row>
     </Container>
   )

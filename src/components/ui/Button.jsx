@@ -1,5 +1,6 @@
 import React from 'react'
-import Button from '@mui/material/Button'
+
+import MuiButton from '@mui/material/Button'
 import { styled } from '@mui/material/styles'
 
 export const MyButton = ({ children, variant = 'primary', large, disabled, onClick, ...props }) => {
@@ -16,9 +17,8 @@ export const MyButton = ({ children, variant = 'primary', large, disabled, onCli
   )
 }
 
-const StyledButton = styled(Button, {
-  shouldForwardProp: (prop) => prop !== 'variantType' && prop !== 'large',
-})(({ disabled, variantType, large }) => ({
+
+const StyledButton = styled(MuiButton)(({ disabled, variantType, large }) => ({
   borderRadius: 8,
   fontWeight: 500,
   fontSize: 14,
@@ -28,7 +28,8 @@ const StyledButton = styled(Button, {
   justifyContent: 'center',
   textTransform: 'none',
   transition: 'all 0.2s ease',
-  ...(variantStyles[variantType] || variantStyles.default)(disabled),
+ 
+  ...(variantStyles[variantType] ? variantStyles[variantType](disabled) : {}),
 }))
 
 const variantStyles = {
@@ -41,6 +42,7 @@ const variantStyles = {
       background: disabled ? '#e0e0e0' : 'linear-gradient(90deg, #5f2cff, #3a5bff)',
     },
   }),
+
   success: (disabled) => ({
     width: 82,
     height: 42,
@@ -50,6 +52,7 @@ const variantStyles = {
       background: disabled ? '#e0e0e0' : '#31cf38',
     },
   }),
+
   outline: (disabled) => ({
     width: 114,
     height: 42,
@@ -61,6 +64,7 @@ const variantStyles = {
       color: disabled ? '#bdbdbd' : '#fff',
     },
   }),
+
   secondary: (disabled) => ({
     width: 100,
     height: 42,
@@ -72,6 +76,7 @@ const variantStyles = {
       color: disabled ? '#bdbdbd' : '#fff',
     },
   }),
+
   default: (disabled) => ({
     width: 115,
     height: 42,
@@ -81,6 +86,39 @@ const variantStyles = {
     '&:hover': {
       background: disabled ? '#ffffff' : '#3a10e5',
       color: disabled ? '#bdbdbd' : '#fff',
+    },
+  }),
+
+  unknown: (disabled) => ({
+    width: 142,
+    height: 42,
+    background: disabled ? '#e0e0e0' : '#3a10e5',
+    color: disabled ? '#a0a0a0' : '#ffffff',
+    '&:hover': {
+      background: disabled ? '#e0e0e0' : '#4e28e8',
+    },
+  }),
+
+  rpaction: (disabled) => ({
+    width: 168,
+    height: 42,
+    background: '#ffffff',
+    color: disabled ? '#bdbdbd' : '#3a10e5',
+    border: `2px solid ${disabled ? '#e0e0e0' : '#3a10e5'}`,
+    '&:hover': {
+      background: disabled ? '#ffffff' : '#3a10e5',
+      color: disabled ? '#bdbdbd' : '#fff',
+    },
+  }),
+
+ 
+  logout: (disabled) => ({
+    width: 120, 
+    height: 42,
+    background: disabled ? '#e0e0e0' : '#3a10e5',
+    color: disabled ? '#a0a0a0' : '#ffffff',
+    '&:hover': {
+      background: disabled ? '#e0e0e0' : '#3a10e5',
     },
   }),
 }
