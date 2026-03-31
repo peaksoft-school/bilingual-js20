@@ -1,4 +1,4 @@
-import React from 'react'
+
 import styled from 'styled-components'
 import { MyButton } from '../components/ui/Button'
 import BilingualImg from '../assets/icons/images/bilingual.png'

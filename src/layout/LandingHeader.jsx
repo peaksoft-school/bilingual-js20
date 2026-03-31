@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import { ButtonSecond } from '../components/ui/ButtonSecond'
-import BilingualImg from '/src/assets/icons/images/bilingual.png'// путь к логотипу
+import BilingualImg from '/src/assets/icons/images/bilingual.png'
 
 export class LandingHeader extends Component {
   constructor(props) {
@@ -37,7 +37,7 @@ export class LandingHeader extends Component {
   }
 }
 
-// Styled-components
+
 const Header = styled.header`
   position: fixed;
   top: 0;
