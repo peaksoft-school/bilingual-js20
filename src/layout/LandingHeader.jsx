@@ -1,45 +1,66 @@
-import React from 'react'
+import React, { Component } from 'react'
 import styled from 'styled-components'
-import { MyButton } from '../components/ui/Button'
-import BilingualImg from '../assets/icons/images/bilingual.png'
+import { ButtonSecond } from '../components/ui/ButtonSecond'
+import BilingualImg from '/src/assets/icons/images/bilingual.png'// путь к логотипу
 
-export const LandingHeader = () => {
-  return (
-    <HeaderWrapper>
-      <Content>
+export class LandingHeader extends Component {
+  constructor(props) {
+    super(props)
+    this.state = { scrolled: false }
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll)
+  }
+
+  handleScroll = () => {
+    const isScrolled = window.scrollY > 50
+    if (isScrolled !== this.state.scrolled) {
+      this.setState({ scrolled: isScrolled })
+    }
+  }
+
+  render() {
+    return (
+      <Header scrolled={this.state.scrolled}>
         <Logo src={BilingualImg} alt="logo" />
-
         <Nav>
-          <MyButton variant="outline">TO COME IN</MyButton>
-          <MyButton variant="filled">REGISTER</MyButton>
+          <ButtonSecond variant="unknown">TO COME IN</ButtonSecond>
+          <ButtonSecond variant="filled">REGISTER</ButtonSecond>
         </Nav>
-      </Content>
-    </HeaderWrapper>
-  )
+      </Header>
+    )
+  }
 }
 
-const HeaderWrapper = styled.div`
+// Styled-components
+const Header = styled.header`
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  border-bottom: 1px solid #eee;
-  background-color: #fff;
-`
-
-const Content = styled.div`
-  max-width: 1280px;
-  margin: 0 auto;
+  padding: 10px 20px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 20px 0;
+  align-items: center;
+  z-index: 999;
+
+  background-color: ${({ scrolled }) => (scrolled ? '#ffffff' : '#FFD700')};
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+  box-shadow: ${({ scrolled }) => (scrolled ? '0 2px 10px rgba(0,0,0,0.1)' : 'none')};
 `
 
 const Logo = styled.img`
-  width: 174px;
-  height: 42px;
+  height: 40px;
 `
 
-const Nav = styled.div`
+const Nav = styled.nav`
   display: flex;
-  align-items: center;
-  gap: 16px;
+  gap: 15px;
 `
