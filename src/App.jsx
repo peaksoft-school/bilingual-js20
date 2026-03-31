@@ -8,6 +8,7 @@ const App = () => {
     <Container>
       <Row>
         <Header role="client" />  
+        <br />
         <Header role="admin" />
       </Row>
     </Container>
