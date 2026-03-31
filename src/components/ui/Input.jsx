@@ -1,6 +1,29 @@
-// Input.jsx
-import React from 'react'
 import { Box, TextField, Typography } from '@mui/material'
+import { styled } from '@mui/material/styles'
+
+const Grid = styled(Box)({
+  display: 'grid',
+  gridTemplateColumns: '1fr 1fr',
+  gap: '32px',
+})
+
+const HoverTextField = styled(TextField)({
+  '&:hover .MuiOutlinedInput-notchedOutline': {
+    borderColor: '#7B61FF',
+  },
+})
+
+const FocusTextField = styled(TextField)({
+  '& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline': {
+    borderColor: '#7B61FF',
+  },
+})
+
+const ErrorTextField = styled(TextField)({
+  '& .MuiOutlinedInput-root.Mui-error .MuiOutlinedInput-notchedOutline': {
+    borderColor: '#FF4D4F',
+  },
+})
 
 export const Input = () => {
   return (
@@ -9,7 +32,7 @@ export const Input = () => {
         INPUT
       </Typography>
 
-      <Box display="grid" gridTemplateColumns="1fr 1fr" gap={4}>
+      <Grid>
         <Box>
           <Typography variant="subtitle2">DEFAULT</Typography>
           <TextField placeholder="text" variant="outlined" fullWidth size="small" />
@@ -17,32 +40,12 @@ export const Input = () => {
 
         <Box>
           <Typography variant="subtitle2">HOVER</Typography>
-          <TextField
-            placeholder="text"
-            variant="outlined"
-            fullWidth
-            size="small"
-            sx={{
-              '&:hover .MuiOutlinedInput-notchedOutline': {
-                borderColor: '#7B61FF',
-              },
-            }}
-          />
+          <HoverTextField placeholder="text" variant="outlined" fullWidth size="small" />
         </Box>
 
         <Box>
           <Typography variant="subtitle2">CLICK</Typography>
-          <TextField
-            label="Name"
-            variant="outlined"
-            fullWidth
-            size="small"
-            sx={{
-              '& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline': {
-                borderColor: '#7B61FF',
-              },
-            }}
-          />
+          <FocusTextField label="Name" variant="outlined" fullWidth size="small" />
         </Box>
 
         <Box>
@@ -64,18 +67,13 @@ export const Input = () => {
 
         <Box>
           <Typography variant="subtitle2">ERROR</Typography>
-          <TextField
+          <ErrorTextField
             label="Password"
             variant="outlined"
             fullWidth
             size="small"
             error
             helperText=" "
-            sx={{
-              '& .MuiOutlinedInput-root.Mui-error .MuiOutlinedInput-notchedOutline': {
-                borderColor: '#FF4D4F',
-              },
-            }}
           />
         </Box>
 
@@ -86,21 +84,16 @@ export const Input = () => {
 
         <Box>
           <Typography variant="subtitle2">FOCUS</Typography>
-          <TextField
+          <FocusTextField
             label="Name"
             defaultValue="text"
             variant="outlined"
             fullWidth
             size="small"
             focused
-            sx={{
-              '& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline': {
-                borderColor: '#7B61FF',
-              },
-            }}
           />
         </Box>
-      </Box>
+      </Grid>
     </Box>
   )
 }
