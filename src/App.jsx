@@ -1,12 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Header } from './layout/Header'
+
+import  {LandingHeader}  from './layout/LandingHeader'
 
 const App = () => {
   return (
     <Container>
       <Row>
-        <Header role="client" />
+        
+        <LandingHeader role="admin" />
        
       </Row>
     </Container>

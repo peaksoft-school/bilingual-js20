@@ -62,6 +62,7 @@ const variantStyles = {
     '&:hover': {
       background: disabled ? 'transparent' : '#3a10e5',
       color: disabled ? '#bdbdbd' : '#fff',
+      margin: '0 auto',
     },
   }),
 
