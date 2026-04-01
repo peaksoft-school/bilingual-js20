@@ -1,5 +1,5 @@
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import Footer from './layout/Footer.jsx'
+import App from './App.jsx'
 
-createRoot(document.getElementById('root')).render(<Footer />)
+createRoot(document.getElementById('root')).render(<App />)
