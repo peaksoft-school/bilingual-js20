@@ -1,99 +1,55 @@
-import { Box, TextField, Typography } from '@mui/material'
+import { TextField } from '@mui/material'
 import { styled } from '@mui/material/styles'
 
-const Grid = styled(Box)({
-  display: 'grid',
-  gridTemplateColumns: '1fr 1fr',
-  gap: '32px',
-})
-
-const HoverTextField = styled(TextField)({
-  '&:hover .MuiOutlinedInput-notchedOutline': {
-    borderColor: '#7B61FF',
-  },
-})
-
-const FocusTextField = styled(TextField)({
-  '& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline': {
-    borderColor: '#7B61FF',
-  },
-})
-
-const ErrorTextField = styled(TextField)({
-  '& .MuiOutlinedInput-root.Mui-error .MuiOutlinedInput-notchedOutline': {
-    borderColor: '#FF4D4F',
-  },
-})
-
-export const Input = () => {
+export const Input = ({
+  label,
+  placeholder,
+  value,
+  onChange,
+  error = false,
+  disabled = false,
+  fullWidth = true,
+  type = 'text',
+  ...rest
+}) => {
   return (
-    <Box p={4}>
-      <Typography variant="h6" mb={3}>
-        INPUT
-      </Typography>
-
-      <Grid>
-        <Box>
-          <Typography variant="subtitle2">DEFAULT</Typography>
-          <TextField placeholder="text" variant="outlined" fullWidth size="small" />
-        </Box>
-
-        <Box>
-          <Typography variant="subtitle2">HOVER</Typography>
-          <HoverTextField placeholder="text" variant="outlined" fullWidth size="small" />
-        </Box>
-
-        <Box>
-          <Typography variant="subtitle2">CLICK</Typography>
-          <FocusTextField label="Name" variant="outlined" fullWidth size="small" />
-        </Box>
-
-        <Box>
-          <Typography variant="subtitle2">DISABLED</Typography>
-          <TextField placeholder="text" variant="outlined" fullWidth size="small" disabled />
-        </Box>
-
-        <Box>
-          <Typography variant="subtitle2">ACTIVE</Typography>
-          <TextField
-            label="Name"
-            defaultValue="text"
-            variant="outlined"
-            fullWidth
-            size="small"
-            focused
-          />
-        </Box>
-
-        <Box>
-          <Typography variant="subtitle2">ERROR</Typography>
-          <ErrorTextField
-            label="Password"
-            variant="outlined"
-            fullWidth
-            size="small"
-            error
-            helperText=" "
-          />
-        </Box>
-
-        <Box>
-          <Typography variant="subtitle2">FILLED</Typography>
-          <TextField label="Name" defaultValue="Aidana" variant="outlined" fullWidth size="small" />
-        </Box>
-
-        <Box>
-          <Typography variant="subtitle2">FOCUS</Typography>
-          <FocusTextField
-            label="Name"
-            defaultValue="text"
-            variant="outlined"
-            fullWidth
-            size="small"
-            focused
-          />
-        </Box>
-      </Grid>
-    </Box>
+    <StyledTextField
+      label={label}
+      placeholder={placeholder}
+      value={value}
+      onChange={onChange}
+      error={error}
+      disabled={disabled}
+      fullWidth={fullWidth}
+      type={type}
+      variant="outlined"
+      {...rest}
+    />
   )
 }
+
+const StyledTextField = styled(TextField)(({ theme }) => ({
+  '& .MuiOutlinedInput-root': {
+    '& .MuiOutlinedInput-notchedOutline': {
+      borderColor: '#D9D9D9',
+    },
+
+    '&:hover .MuiOutlinedInput-notchedOutline': {
+      borderColor: '#7B61FF',
+    },
+
+    '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+      borderColor: '#7B61FF',
+      borderWidth: 2,
+    },
+
+    '&.Mui-error .MuiOutlinedInput-notchedOutline': {
+      borderColor: '#FF4D4F',
+    },
+
+    '&.Mui-disabled .MuiOutlinedInput-notchedOutline': {
+      borderColor: '#D9D9D9',
+      backgroundColor: '#F5F5F5',
+    },
+  },
+}))
