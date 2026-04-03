@@ -1,55 +1,74 @@
+import React, { forwardRef } from 'react'
 import { TextField } from '@mui/material'
 import { styled } from '@mui/material/styles'
 
-export const Input = ({
-  label,
-  placeholder,
-  value,
-  onChange,
-  error = false,
-  disabled = false,
-  fullWidth = true,
-  type = 'text',
-  ...rest
-}) => {
-  return (
-    <StyledTextField
-      label={label}
-      placeholder={placeholder}
-      value={value}
-      onChange={onChange}
-      error={error}
-      disabled={disabled}
-      fullWidth={fullWidth}
-      type={type}
-      variant="outlined"
-      {...rest}
-    />
-  )
-}
+export const Input = forwardRef(
+  ({ label = 'Label', placeholder = 'text', value, onChange, state = 'default', ...rest }, ref) => {
+    return (
+      <StyledTextField
+        ref={ref}
+        label={label}
+        placeholder={placeholder}
+        value={value}
+        onChange={onChange}
+        variant="outlined"
+        disabled={state === 'disabled'}
+        error={state === 'error'}
+        inputState={state}
+        InputProps={{
+          readOnly: state === 'click',
+        }}
+        {...rest}
+      />
+    )
+  }
+)
 
-const StyledTextField = styled(TextField)(({ theme }) => ({
+Input.displayName = 'Input'
+
+const StyledTextField = styled(TextField, {
+  shouldForwardProp: (prop) => prop !== 'inputState',
+})(({ inputState }) => ({
   '& .MuiOutlinedInput-root': {
-    '& .MuiOutlinedInput-notchedOutline': {
-      borderColor: '#D9D9D9',
+    borderRadius: '8px',
+
+    '& fieldset': {
+      borderColor: '#ccc',
     },
 
-    '&:hover .MuiOutlinedInput-notchedOutline': {
-      borderColor: '#7B61FF',
-    },
+    ...(inputState === 'hover' && {
+      '&:hover fieldset': {
+        borderColor: '#7b61ff',
+      },
+    }),
 
-    '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-      borderColor: '#7B61FF',
-      borderWidth: 2,
-    },
+    ...(inputState === 'click' && {
+      '& fieldset': {
+        borderColor: '#7b61ff',
+      },
+    }),
 
-    '&.Mui-error .MuiOutlinedInput-notchedOutline': {
-      borderColor: '#FF4D4F',
-    },
+    ...(inputState === 'active' && {
+      '& fieldset': {
+        borderColor: '#7b61ff',
+        borderWidth: '2px',
+      },
+    }),
 
-    '&.Mui-disabled .MuiOutlinedInput-notchedOutline': {
-      borderColor: '#D9D9D9',
-      backgroundColor: '#F5F5F5',
-    },
+    ...(inputState === 'focus' && {
+      '&.Mui-focused fieldset': {
+        borderColor: '#7b61ff',
+      },
+    }),
+
+    ...(inputState === 'filled' && {
+      backgroundColor: '#f5f5f5',
+    }),
+
+    ...(inputState === 'error' && {
+      '& fieldset': {
+        borderColor: 'red',
+      },
+    }),
   },
 }))
