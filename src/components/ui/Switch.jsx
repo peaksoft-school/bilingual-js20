@@ -1,67 +1,75 @@
-import styled from "styled-components";
+import { styled } from '@mui/material/styles';
+import FormGroup from '@mui/material/FormGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import {Switch as SwitchMui} from '@mui/material';
 
-function Switch() {
+export const Switch = () => {
   return (
-    <Wrapper>
-      <SwitchLabel>
-        <input type="checkbox" />
-        <span className="slider"></span>
-      </SwitchLabel>
-    </Wrapper>
+    <FormGroup>
+      <FormControlLabel
+        control={<IOSSwitch sx={{ m: 1 }} defaultChecked />}
+        label=""
+      />
+    </FormGroup>
   );
 }
 
-export default Switch;
-
-const Wrapper = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 16px;
-`;
-
-/* --- Switch --- */
-const SwitchLabel = styled.label`
-  font-size: 17px;
-  position: relative;
-  display: inline-block;
-  width: 70.4px;
-  height: 44px;
-
-  input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    inset: 0;
-    background-color: #adb5bd;
-    border: 1px solid #adb5bd;
-    transition: all 0.3s;
-    border-radius: 30px;
-  }
-
-  .slider:before {
-    content: "";
-    position: absolute;
-    height: 38.32px;
-    width: 37px;
-    border-radius: 20px;
-    left: 0.15rem;
-    bottom: 0.1rem;
-    background-color: #fff;
-    transition: all ease 0.3s;
-  }
-
-  input:checked + .slider {
-    background-color: #2ab930;
-    border-color: #2ab930;
-  }
-
-  input:checked + .slider:before {
-    transform: translateX(1.72rem);
-  }
-`;
-
+const IOSSwitch = styled((props) => (
+  <SwitchMui focusVisibleClassName=".Mui-focusVisible" disableRipple {...props} />
+))(({ theme }) => ({
+  width: 42,
+  height: 26,
+  padding: 0,
+  '& .MuiSwitch-switchBase': {
+    padding: 0,
+    margin: 2,
+    transitionDuration: '300ms',
+    '&.Mui-checked': {
+      transform: 'translateX(16px)',
+      color: '#fff',
+      '& + .MuiSwitch-track': {
+        backgroundColor: '#2AB930',
+        opacity: 1,
+        border: 0,
+        ...theme.applyStyles('dark', {
+          backgroundColor: '#2ECA45',
+        }),
+      },
+      '&.Mui-disabled + .MuiSwitch-track': {
+        opacity: 0.5,
+      },
+    },
+    '&.Mui-focusVisible .MuiSwitch-thumb': {
+      color: '#2AB930',
+      border: '6px solid #fff',
+    },
+    '&.Mui-disabled .MuiSwitch-thumb': {
+      color: theme.palette.grey[100],
+      ...theme.applyStyles('dark', {
+        color: theme.palette.grey[600],
+      }),
+    },
+    '&.Mui-disabled + .MuiSwitch-track': {
+      opacity: 0.7,
+      ...theme.applyStyles('dark', {
+        opacity: 0.3,
+      }),
+    },
+  },
+  '& .MuiSwitch-thumb': {
+    boxSizing: 'border-box',
+    width: 22,
+    height: 22,
+  },
+  '& .MuiSwitch-track': {
+    borderRadius: 26 / 2,
+    backgroundColor: '#C4C4C4',
+    opacity: 1,
+    transition: theme.transitions.create(['background-color'], {
+      duration: 500,
+    }),
+    ...theme.applyStyles('dark', {
+      backgroundColor: '',
+    }),
+  },
+}));
