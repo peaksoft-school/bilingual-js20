@@ -43,7 +43,7 @@ const Header = styled.header`
   top: 0;
   left: 0;
   width: 100%;
-  padding: 10px 20px;
+  padding: 24px 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -57,7 +57,8 @@ const Header = styled.header`
 `
 
 const Logo = styled.img`
-  height: 40px;
+ 
+  height: 48px;
 `
 
 const Nav = styled.nav`

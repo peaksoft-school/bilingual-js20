@@ -19,7 +19,9 @@ export const Header = ({ role = 'client' }) => {
           </NavItem>
 
           
-          <NavItem color="#4C4859">{navText}</NavItem>
+          <NavItem bold color="#4C4859" variant="results">
+            {navText}
+          </NavItem>
 
           <MyButton variant="outline">LOG OUT</MyButton>
         </Nav>
@@ -31,17 +33,17 @@ export const Header = ({ role = 'client' }) => {
 
 const HeaderWrapper = styled.div`
   width: 100%;
-  border-bottom: 1px solid #eee;
+  
   background-color: #fff;
 `
 
 const Content = styled.div`
-  max-width: 1280px;
+  max-width: 1400px;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 0;
+  padding: 20px 0px ;
 `
 
 const Logo = styled.img`
@@ -56,10 +58,8 @@ const Nav = styled.div`
 `
 
 const NavItem = styled.span`
+  font-family: 'Inter', sans-serif; // 👈 новый шрифт
   font-size: 14px;
-  font-weight: ${({ bold }) => (bold ? 600 : 400)};
+  font-weight: ${({ bold }) => (bold ? 700 : 400)};
   color: ${({ color }) => color};
-  cursor: pointer;
-  line-height: 100%;
-  text-transform: uppercase;
 `
