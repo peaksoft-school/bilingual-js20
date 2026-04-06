@@ -1,9 +1,8 @@
-import React, { forwardRef } from 'react'
-import { TextField } from '@mui/material'
-import { styled } from '@mui/material/styles'
+import { forwardRef } from 'react'
+import { TextField, styled } from '@mui/material'
 
 export const Input = forwardRef(
-  ({ label = 'Label', placeholder = 'text', value, onChange, state = 'default', ...rest }, ref) => {
+  ({ label = 'Label', placeholder = 'text', value, onChange, error, disabled, ...rest }, ref) => {
     return (
       <StyledTextField
         ref={ref}
@@ -12,23 +11,15 @@ export const Input = forwardRef(
         value={value}
         onChange={onChange}
         variant="outlined"
-        disabled={state === 'disabled'}
-        error={state === 'error'}
-        inputState={state}
-        InputProps={{
-          readOnly: state === 'click',
-        }}
+        error={error}
+        disabled={disabled}
         {...rest}
       />
     )
   }
 )
 
-Input.displayName = 'Input'
-
-const StyledTextField = styled(TextField, {
-  shouldForwardProp: (prop) => prop !== 'inputState',
-})(({ inputState }) => ({
+const StyledTextField = styled(TextField)(() => ({
   '& .MuiOutlinedInput-root': {
     borderRadius: '8px',
 
@@ -36,39 +27,21 @@ const StyledTextField = styled(TextField, {
       borderColor: '#ccc',
     },
 
-    ...(inputState === 'hover' && {
-      '&:hover fieldset': {
-        borderColor: '#7b61ff',
-      },
-    }),
+    '&:hover fieldset': {
+      borderColor: '#7b61ff',
+    },
 
-    ...(inputState === 'click' && {
-      '& fieldset': {
-        borderColor: '#7b61ff',
-      },
-    }),
+    '&.Mui-focused fieldset': {
+      borderColor: '#7b61ff',
+      borderWidth: '2px',
+    },
 
-    ...(inputState === 'active' && {
-      '& fieldset': {
-        borderColor: '#7b61ff',
-        borderWidth: '2px',
-      },
-    }),
+    '&.Mui-error fieldset': {
+      borderColor: 'red',
+    },
 
-    ...(inputState === 'focus' && {
-      '&.Mui-focused fieldset': {
-        borderColor: '#7b61ff',
-      },
-    }),
-
-    ...(inputState === 'filled' && {
+    '&.Mui-disabled': {
       backgroundColor: '#f5f5f5',
-    }),
-
-    ...(inputState === 'error' && {
-      '& fieldset': {
-        borderColor: 'red',
-      },
-    }),
+    },
   },
 }))
