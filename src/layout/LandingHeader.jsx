@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import { ButtonSecond } from '../components/ui/ButtonSecond'
+
 import BilingualImg from '/src/assets/icons/images/bilingual.png'
 
 export class LandingHeader extends Component {
@@ -29,8 +29,7 @@ export class LandingHeader extends Component {
       <Header scrolled={this.state.scrolled}>
         <Logo src={BilingualImg} alt="logo" />
         <Nav>
-          <ButtonSecond variant="unknown">TO COME IN</ButtonSecond>
-          <ButtonSecond variant="filled">REGISTER</ButtonSecond>
+         
         </Nav>
       </Header>
     )
