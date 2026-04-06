@@ -7,10 +7,9 @@ export const App = () => {
     <div>
       <h1>Bilingual js-20</h1>
      <LandingHeader />
+     
     </div>
   )
- 
-
    
 }
 
