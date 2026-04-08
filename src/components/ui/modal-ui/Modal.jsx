@@ -7,7 +7,7 @@ export const Modal = ({ isOpen, onClose, children }) => {
     <Overlay onClick={onClose}>
       <ModalContainer onClick={(e) => e.stopPropagation()}>
         <CloseIcon onClick={onClose}>&times;</CloseIcon>
-        <ModalContent>{children}</ModalContent>
+        {children}
       </ModalContainer>
     </Overlay>
   )
@@ -17,7 +17,6 @@ const Overlay = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-
   width: 100%;
   height: 100vh;
   background: rgba(0, 0, 0, 0.4);
@@ -28,17 +27,14 @@ const Overlay = styled.div`
 `
 
 const ModalContainer = styled.div`
-  // main modal
   background: white;
   width: 637px;
-  height: 376px;
   padding: 45px;
-
   border-radius: 20px;
   position: relative;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 `
-// x close
+
 const CloseIcon = styled.button`
   position: absolute;
   top: 20px;
@@ -57,11 +53,4 @@ const CloseIcon = styled.button`
   &:hover {
     background: #f5f5f5;
   }
-`
-
-const ModalContent = styled.div`
-  background: white;
-  display: flex;
-  flex-direction: column;
-  gap: 0px;
 `

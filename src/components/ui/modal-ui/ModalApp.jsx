@@ -10,7 +10,7 @@ export const ModalApp = () => {
 
   return (
     <StyledBox>
-      <OpenButton onClick={handleOpen}>open Modal</OpenButton>
+      <OpenButton onClick={handleOpen}>Open Modal</OpenButton>
 
       <Modal isOpen={modalOpen} onClose={handleClose}>
         <FormGroup>
@@ -32,6 +32,7 @@ export const ModalApp = () => {
   )
 }
 
+// --- Styled Components (көп өзгөргөн жок) ---
 const StyledBox = styled.div`
   padding: 50px;
   display: flex;
@@ -58,8 +59,6 @@ const FormGroup = styled.div`
 const Label = styled.label`
   font-size: 14px;
   color: #555;
-
-  margin-top: 50px;
 `
 
 const Input = styled.input`
@@ -94,7 +93,6 @@ const ButtonGroup = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 10px;
-  margin-left: 190px;
   gap: 10px;
 `
 
