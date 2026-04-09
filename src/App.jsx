@@ -1,12 +1,5 @@
-import { Landing } from "./components/Landing";
-  
-export const App = () => {
-  return (
-    <div>
-        <Landing />
-    </div>
-  );
+export const = App = () => {
+  <h1>Bilingual js-20</h1>
 }
-
   
   
