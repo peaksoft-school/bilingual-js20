@@ -46,7 +46,7 @@ const Wrapper = styled.div`
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-  height: 150vh;
+  height: 100vh;
 
   background-color: #fcd200;
 
@@ -57,6 +57,8 @@ const Wrapper = styled.div`
   max-width: 1440px;
   margin: 0 auto;
 
+  overflow: hidden;
+
   &::before {
     content: '';
     position: absolute;
@@ -64,11 +66,11 @@ const Wrapper = styled.div`
 
     background-image: url('/src/assets/icons/images/splash.png');
     background-repeat: no-repeat;
-    background-position: bottom;
-    background-size: contain;
 
-    opacity: 0.3; 
+    background-size: 1279px; /* контролирует размер пятен */
+    background-position: center; /* центр как в макете */
 
+    opacity: 0.4;
     pointer-events: none;
   }
 `
@@ -79,23 +81,23 @@ const TextBlock = styled(Box)`
 
 const StyledTypography = styled(Typography)`
   font-family: 'Roboto', sans-serif; 
-  font-size: 60px !important; 
-  font-weight: 700 !important; 
+  font-size: 50px !important; 
+  font-weight: 600 !important; 
   line-height: 1 !important; 
   letter-spacing: -1px !important; 
   color: #43404e !important;
-  padding: 142px 80px !important;
+  padding: 122px 80px !important;
   width: 735px !important;
   height: 190px !important;
-  margin-top: 80px !important;
+  margin-top: 20px !important;
 `;
 
 const StyledSpan = styled.span`
   font-family: 'Roboto', sans-serif;
-  font-size: 100px !important;
+  font-size: 50px !important;
   font-weight: 900 !important;
   line-height: 1 !important;
-  letter-spacing: -2px !important;
+  letter-spacing: -1px !important;
   color: #c93d7d !important;
   padding: 162px 80px !important;
   width: 835px !important;
@@ -114,20 +116,20 @@ const StyledPTeg = styled(Typography)`
 `
 
 const StyledImage = styled.img`
-  width: 594.76px; 
-  height: 499px;
+  width: 494px; 
+  height: 399px;
   position: absolute; 
-  top: 328px; 
-  left: 730px;
+  top: 168px; 
+  left: 830px;
 
   animation: ${slideInRight} 1s ease-out forwards;
 `;
 
 const StyledImageOne = styled.img`
-  width: 206px;
-  height: 243px;
+  width: 180px;
+  height: 213px;
   position: absolute;
-  top: 230px; 
+  top: 130px; 
   left: 720px; 
 
   animation: ${bounce} 2s infinite;
