@@ -53,7 +53,9 @@ const Wrapper = styled.div`
   padding-top: 0px;
   position: relative;
   flex-direction: column;
-  width: 1264.5px;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
 
   &::before {
     content: '';
@@ -65,7 +67,7 @@ const Wrapper = styled.div`
     background-position: bottom;
     background-size: contain;
 
-    opacity: 0.5; 
+    opacity: 0.3; 
 
     pointer-events: none;
   }
@@ -116,13 +118,13 @@ const StyledImage = styled.img`
   height: 499px;
   position: absolute; 
   top: 328px; 
-  right: 40px;
+  left: 730px;
 
   animation: ${slideInRight} 1s ease-out forwards;
 `;
 
 const StyledImageOne = styled.img`
-  width: 236px;
+  width: 206px;
   height: 243px;
   position: absolute;
   top: 230px; 
