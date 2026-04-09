@@ -2,14 +2,13 @@ import { Box, Typography } from '@mui/material';
 import styled, { keyframes } from 'styled-components';
 import BooksImg from '../assets/icons/images/books.png';
 import HatImg from '../assets/icons/images/hat.png';
-import { LandingHeader } from './../layout/LandingHeader';
 
 
 
 export const Landing = () => {
   return (
     <Wrapper>
-      <LandingHeader />
+      
       <TextBlock>
         <StyledTypography>Prove your English proficiency today with</StyledTypography>
         <StyledSpan>BILINGUAL</StyledSpan>
@@ -48,11 +47,29 @@ const Wrapper = styled.div`
   align-items: flex-start;
   justify-content: flex-start;
   height: 150vh;
+
   background-color: #fcd200;
+
   padding-top: 0px;
   position: relative;
   flex-direction: column;
-`;
+  width: 1440px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+
+    background-image: url('/src/assets/icons/images/splash.png');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain;
+
+    opacity: 0.5; 
+
+    pointer-events: none;
+  }
+`
 
 const TextBlock = styled(Box)`
   animation: ${fadeSlideDown} 1s ease-out forwards;
@@ -68,7 +85,7 @@ const StyledTypography = styled(Typography)`
   padding: 142px 80px !important;
   width: 735px !important;
   height: 190px !important;
-  margin-top: 280px !important;
+  margin-top: 80px !important;
 `;
 
 const StyledSpan = styled.span`
@@ -95,20 +112,20 @@ const StyledPTeg = styled(Typography)`
 `
 
 const StyledImage = styled.img`
-  width: 590px; 
-  height: auto;
+  width: 594.76px; 
+  height: 499px;
   position: absolute; 
-  top: 550px; 
-  right: 100px;
+  top: 328px; 
+  right: 40px;
 
   animation: ${slideInRight} 1s ease-out forwards;
 `;
 
 const StyledImageOne = styled.img`
-  width: 336px;
-  height: auto;
+  width: 236px;
+  height: 243px;
   position: absolute;
-  top: 430px; 
+  top: 230px; 
   left: 720px; 
 
   animation: ${bounce} 2s infinite;
