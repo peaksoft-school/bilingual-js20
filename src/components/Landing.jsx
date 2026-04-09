@@ -53,7 +53,7 @@ const Wrapper = styled.div`
   padding-top: 0px;
   position: relative;
   flex-direction: column;
-  width: 1440px;
+  width: 1264.5px;
 
   &::before {
     content: '';
