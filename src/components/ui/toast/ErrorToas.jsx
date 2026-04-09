@@ -6,7 +6,7 @@ import { LineErrorToas } from '../../../assets/icons'
 export const ErrorToas = (title, message) => {
   toast.custom((t) => (
     <Box>
-      <img src={LineErrorToas} alt="" />
+      <StyledCheckCircle src={LineErrorToas} alt="" />
       <div>
         <StyledText>{title}</StyledText>
         <StyledP>{message}</StyledP>
@@ -17,9 +17,9 @@ export const ErrorToas = (title, message) => {
 }
 
 const Box = styled.div`
-  border: 1px solid #8cdb95;
+  border: 1px solid#F6141466;
   border-radius: 8px;
-  background-color: #eafbe7;
+  background-color: #fff1f0;
   width: 311px;
   height: 93px;
   display: flex;
@@ -33,10 +33,8 @@ const StyledCheckCircle = styled.img`
   width: 23px;
   height: 23px;
   top: 20px;
-  border-radius: 50%;
   margin-left: 20px;
   margin-bottom: 23px;
-  background-color: white;
 `
 
 const StyledText = styled.h3`
