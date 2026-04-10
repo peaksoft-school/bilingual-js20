@@ -1,13 +1,15 @@
 
 import styled from 'styled-components'
-import googleImg from '../../assets/icons/google.png'
+import googleImg from '../../assets/icons/svgs/google.svg'
 
 const GoogleSignUpButton = () => {
   return (
     <StyledButton>
       <img src={googleImg} alt="Google" />
       SIGN UP WITH GOOGLE
+      
     </StyledButton>
+    
   )
 }
 
