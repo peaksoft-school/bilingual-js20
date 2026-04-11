@@ -1,40 +1,21 @@
 {
   "name": "bilingual-js20",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "version": "1.0.0",
+  "description": "This is an educational project developed as part of a course. The main focus is practicing modern React development using JavaScript, Redux Toolkit, MUI (Material UI), and clean component architecture.",
+  "main": "eslint.config.js",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint . --ext .js,.jsx --report-unused-disable-directives",
-    "lint:fix": "eslint . --ext .js,.jsx --fix",
-    "format": "prettier --write 'src/**/*.{js,jsx,css}'",
-    "preview": "vite preview"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {
-    "@emotion/react": "^11.14.0",
-    "@emotion/styled": "^11.14.1",
-    "@mui/material": "^7.3.9",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1",
-    "styled-components": "^6.3.12"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peaksoft-school/bilingual-js20.git"
   },
-  "devDependencies": {
-    "@eslint/js": "^9.39.4",
-    "@types/react": "^19.1.10",
-    "@types/react-dom": "^19.1.7",
-    "@vitejs/plugin-react": "^5.0.0",
-    "eslint": "^9.39.4",
-    "eslint-config-airbnb": "^19.0.4",
-    "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-import": "^2.32.0",
-    "eslint-plugin-jsx-a11y": "^6.10.2",
-    "eslint-plugin-prettier": "^5.5.5",
-    "eslint-plugin-react": "^7.37.5",
-    "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-react-refresh": "^0.4.20",
-    "globals": "^16.5.0",
-    "prettier": "^3.8.1",
-    "vite": "^7.1.2"
-  }
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/peaksoft-school/bilingual-js20/issues"
+  },
+  "homepage": "https://github.com/peaksoft-school/bilingual-js20#readme"
 }
