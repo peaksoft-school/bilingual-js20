@@ -92,7 +92,7 @@ const Container = styled.div`
   p {
     width: 520px;
     height: 120px;
-    top: 1396px;
+    top: 1395px;
     left: 81px;
     margin-top: 29px;
     font: Poppins;
@@ -115,7 +115,7 @@ const Container = styled.div`
       width: 230.11px;
       height: 50px;
       top: 1556px;
-      left: 81px;
+      left: 80px;
       gap: 26px;
     }
   }

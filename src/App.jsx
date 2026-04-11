@@ -1,9 +1,1 @@
-import { UserExperience } from './components/landing/UserExperience'
-
-export const App = () => {
-  return (
-    <div>
-      <UserExperience />
-    </div>
-  )
-}
+export const App = () => <h1>Bilingual-js 20</h1>
