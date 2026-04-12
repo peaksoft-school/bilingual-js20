@@ -33,8 +33,7 @@ export const UserExperience = () => {
             learning goals.
           </p>
 
-          {/*four cards*/}
-          <div className="cards">
+ч          <div className="cards">
             <div className="card" style={{ display: 'flex' }}>
               <img src={Accessible} alt="" />
               <h4>Accessible anytime, anywhere</h4>
