@@ -62,7 +62,7 @@ export const UserExperience = () => {
 
 const Container = styled.div`
   display: flex;
-  background-color: #eccece;
+  background-color: #fff8ed;
   width: 1205.81px;
   height: 437px;
   left: 80px;
