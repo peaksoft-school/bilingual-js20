@@ -24,7 +24,6 @@ export const UserExperience = () => {
       <Container>
         <div>
           <h1>Unparalleled user experience</h1>
-
           <p>
             The most effective way to perfect a language is by immersing yourself in it. Rosetta
             Stone for Enterprise delivers an effective end-to-end experience, founded on a wealth of
@@ -32,8 +31,7 @@ export const UserExperience = () => {
             study with optional online tutoring in a way that fits their schedule and language
             learning goals.
           </p>
-
-ч          <div className="cards">
+          <div className="cards">
             <div className="card" style={{ display: 'flex' }}>
               <img src={Accessible} alt="" />
               <h4>Accessible anytime, anywhere</h4>
