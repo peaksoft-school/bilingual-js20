@@ -9,11 +9,9 @@ const spin = keyframes`
   0% {
     transform: rotate(0deg) scale(1);
   }
-
   50% {
     transform: rotate(10deg) scale(1.05);
   }
-
   100% {
     transform: rotate(0deg) scale(1);
   }
@@ -94,7 +92,7 @@ const Container = styled.div`
     margin-top: 29px;
     font: Poppins;
     font-weight: 400px;
-    font-size: 20px;
+    font-size: 21px;
     line-height: 100%;
 
     letter-spacing: 0%;
