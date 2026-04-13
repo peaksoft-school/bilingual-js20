@@ -1,1 +1,9 @@
-export const App = () => <h1>Bilingual-js 20</h1>
+import { LandingTwo } from "./components/landing/LandingTwo"
+
+export const App = () => {
+    return (
+        <dir>
+            <LandingTwo />
+        </dir>
+    )
+}
