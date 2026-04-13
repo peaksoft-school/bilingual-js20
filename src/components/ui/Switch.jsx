@@ -1,6 +1,6 @@
 import { forwardRef } from 'react'
-import { FormControlLabel, Switch as SwitchMui } from '@mui/material'
-import { styled } from '@mui/material/styles'
+import { FormControlLabel, Switch as SwitchMui ,styled} from '@mui/material'
+
 
 export const Switch = forwardRef(({ checked, onChange, disabled, ...rest }, ref) => {
   return (
@@ -20,7 +20,6 @@ export const Switch = forwardRef(({ checked, onChange, disabled, ...rest }, ref)
   )
 })
 
-export default Switch
 
 const IOSSwitch = styled((props) => (
   <SwitchMui focusVisibleClassName=".Mui-focusVisible" disableRipple {...props} />

@@ -1,6 +1,5 @@
 import { forwardRef } from 'react'
-import { Radio as MuiRadio } from '@mui/material'
-import { styled } from '@mui/material/styles'
+import { Radio as MuiRadio, styled} from '@mui/material'
 
 export const Radio = forwardRef(({ checked, onChange, disabled, ...rest }, ref) => {
   return (
@@ -14,10 +13,10 @@ export const Radio = forwardRef(({ checked, onChange, disabled, ...rest }, ref) 
   )
 })
 
-export default Radio
 
 const StyledRadio = styled(MuiRadio)({
   color: '#9A9A9A',
+
   '&.Mui-checked': {
     color: '#3A10E5',
   },
