@@ -1,6 +1,6 @@
-import { createTheme } from '@mui/material/styles';
+import { createTheme } from '@mui/material/styles'
 
-const Theme = createTheme({
+const theme = createTheme({
   palette: {
     primary: {
       main: '#3A10E5',
@@ -41,34 +41,9 @@ const Theme = createTheme({
   },
   typography: {
     fontFamily: '"Poppins", "Gilroy", sans-serif',
-    h1: {
-      fontFamily: 'Gilroy, sans-serif',
-      fontSize: '2.5rem',
-      fontWeight: 700,
-    },
-    h2: {
-      fontFamily: 'Gilroy, sans-serif',
-      fontSize: '2rem',
-      fontWeight: 700,
-    },
-    h3: {
-      fontFamily: 'Gilroy, sans-serif',
-      fontSize: '1.75rem',
-      fontWeight: 700,
-    },
-    body1: {
-      fontFamily: 'Poppins, sans-serif',
-      fontSize: '1rem',
-    },
-    body2: {
-      fontFamily: 'Poppins, sans-serif',
-      fontSize: '0.875rem',
-    },
-    caption: {
-      fontFamily: 'Poppins, sans-serif',
-      fontSize: '0.75rem',
-    },
   },
-});
+})
 
-export default Theme;
+export default theme
+
+/* <ThemeProvider theme={theme}> пример работы в других компонентах */
