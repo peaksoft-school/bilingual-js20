@@ -28,7 +28,7 @@ function OurTeam() {
     members.map(({ name, role, tl, tr, br, bl, bg }) => (
       <div key={name}>
         <StyledCard>
-          <StyledPhoto bg={bg} tl={tl} tr={tr} br={br} bl={bl} />
+          <StyledPhoto $bg={bg} $tl={tl} $tr={tr} $br={br} $bl={bl} />
           <StyledInfo>
             <StyledName>{name}</StyledName>
             <StyledRole>{role}</StyledRole>
