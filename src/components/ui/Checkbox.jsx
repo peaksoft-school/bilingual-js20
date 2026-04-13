@@ -1,4 +1,4 @@
-import * as React from 'react'
+import { forwardRef } from 'react'
 import { Checkbox as MuiCheckbox } from '@mui/material'
 import { styled } from '@mui/material/styles'
 
@@ -21,7 +21,7 @@ const CheckedIcon = styled(Icon)({
   },
 })
 
-const Checkbox = React.forwardRef(({ onChange, checked, disabled, ...rest }, ref) => {
+export const Checkbox = forwardRef(({ onChange, checked, disabled, ...rest }, ref) => {
   return (
     <div>
       <MuiCheckbox
@@ -42,7 +42,3 @@ const Checkbox = React.forwardRef(({ onChange, checked, disabled, ...rest }, ref
     </div>
   )
 })
-
-Checkbox.displayName = 'Checkbox'
-
-export default Checkbox

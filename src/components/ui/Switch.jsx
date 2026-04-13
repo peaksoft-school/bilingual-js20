@@ -1,18 +1,26 @@
-import { styled } from '@mui/material/styles';
-import FormGroup from '@mui/material/FormGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import {Switch as SwitchMui} from '@mui/material';
+import { forwardRef } from 'react'
+import { FormControlLabel, Switch as SwitchMui } from '@mui/material'
+import { styled } from '@mui/material/styles'
 
-export const Switch = () => {
+export const Switch = forwardRef(({ checked, onChange, disabled, ...rest }, ref) => {
   return (
-    <FormGroup>
-      <FormControlLabel
-        control={<IOSSwitch sx={{ m: 1 }} defaultChecked />}
-        label=""
-      />
-    </FormGroup>
-  );
-}
+    <FormControlLabel
+      control={
+        <IOSSwitch
+          ref={ref}
+          checked={checked}
+          onChange={onChange}
+          disabled={disabled}
+          sx={{ m: 1 }}
+          {...rest}
+        />
+      }
+      label=""
+    />
+  )
+})
+
+export default Switch
 
 const IOSSwitch = styled((props) => (
   <SwitchMui focusVisibleClassName=".Mui-focusVisible" disableRipple {...props} />
@@ -72,4 +80,4 @@ const IOSSwitch = styled((props) => (
       backgroundColor: '',
     }),
   },
-}));
+}))
