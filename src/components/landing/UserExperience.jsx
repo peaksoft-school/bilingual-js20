@@ -1,126 +1,136 @@
 import styled, { keyframes } from 'styled-components'
+import { Typography } from '@mui/material'
+
 import english from '../../assets/icons/english.svg'
 import Accessible from '../../assets/icons/accessible.svg'
 import speech from '../../assets/icons/speech.svg'
 import extensive from '../../assets/icons/extensive.svg'
 import tutoring from '../../assets/icons/tutoring.svg'
 
-const spin = keyframes`
-  0% {
-    transform: rotate(0deg) scale(1);
-  }
-  50% {
-    transform: rotate(10deg) scale(1.05);
-  }
-  100% {
-    transform: rotate(0deg) scale(1);
-  }
+const rotateAnimation = keyframes`
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(3deg) scale(1.02); }
 `
+
 export const UserExperience = () => {
+  const features = [
+    { icon: Accessible, text: 'Accessible anytime, anywhere' },
+    { icon: extensive, text: 'Extensive business content' },
+    { icon: speech, text: 'Leading speech recognition' },
+    { icon: tutoring, text: 'Unlimited live tutoring' },
+  ]
+
   return (
-    <>
-      <Container>
-        <div>
-          <h1>Unparalleled user experience</h1>
-          <p>
-            The most effective way to perfect a language is by immersing yourself in it. Rosetta
-            Stone for Enterprise delivers an effective end-to-end experience, founded on a wealth of
-            carefully structured content. Each learner has the opportunity to balance independent
-            study with optional online tutoring in a way that fits their schedule and language
-            learning goals.
-          </p>
-          <div className="cards">
-            <div className="card" style={{ display: 'flex' }}>
-              <img src={Accessible} alt="" />
-              <h4>Accessible anytime, anywhere</h4>
-            </div>
+    <MainContainer>
+      <ContentSection>
+        <Title>Unparalleled user experience</Title>
 
-            <div className="card" style={{ display: 'flex' }}>
-              <img src={extensive} alt="" />
-              <h4>Extensive business content</h4>
-            </div>
+        <Description>
+          The most effective way to perfect a language is by immersing yourself in it. Rosetta Stone
+          for Enterprise delivers an effective end-to-end experience, founded on a wealth of
+          carefully structured content. Each learner has the opportunity to balance independent
+          study with optional online tutoring in a way that fits their schedule and language
+          learning goals.
+        </Description>
 
-            <div className="card" style={{ display: 'flex' }}>
-              <img src={speech} alt="" />
-              <h4>Leading speech recognition</h4>
-            </div>
+        <ListContainer>
+          {features.map((item, index) => (
+            <ListItem key={index}>
+              <IconBox>
+                <img src={item.icon} alt={item.text} />
+              </IconBox>
+              <ListItemText>{item.text}</ListItemText>
+            </ListItem>
+          ))}
+        </ListContainer>
+      </ContentSection>
 
-            <div className="card" style={{ display: 'flex' }}>
-              <img src={tutoring} alt="" />
-              <h4>Unlimited live tutoring</h4>
-            </div>
-          </div>
-        </div>
-
-        <EnglishBook src={english} alt="" />
-      </Container>
-    </>
+      <ImageSection>
+        <Illustration src={english} alt="English Learning Illustration" />
+      </ImageSection>
+    </MainContainer>
   )
 }
 
-const Container = styled.div`
+const MainContainer = styled.section`
   display: flex;
-  background-color: #fff8ed;
-  width: 1205.81px;
-  height: 437px;
-  left: 80px;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fdf5e9;
+  min-height: 100vh;
+  padding: 60px 10%;
+  gap: 50px;
+`
 
-  margin-left: 70px;
-  margin-top: 50px;
+const ContentSection = styled.div`
+  flex: 1;
+  max-width: 600px;
+`
 
-  h1 {
-    width: 328px;
-    height: 96px;
-    top: 1266px;
-    left: 81px;
-    margin-top: 3px;
-    font: Gilroy;
+const Title = styled(Typography)`
+  && {
+    font-size: 42px;
     font-weight: 700;
-    font-style: bold;
-
-    font-size: 40px;
-    line-height: 100%;
-    letter-spacing: 0%;
     color: #3752b4;
-  }
-
-  p {
-    width: 520px;
-    height: 120px;
-    top: 1395px;
-    left: 81px;
-    margin-top: 29px;
-    font: Poppins;
-    font-weight: 400px;
-    font-size: 21px;
-    line-height: 100%;
-
-    letter-spacing: 0%;
-    color: #23212a;
-  }
-
-  .cards {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 26px;
-
-    margin-top: 55px;
-
-    .card {
-      width: 230.11px;
-      height: 50px;
-      top: 1556px;
-      left: 80px;
-      gap: 26px;
-    }
+    line-height: 1.2;
+    margin-bottom: 24px;
+    font-family: 'Inter', sans-serif;
   }
 `
 
-const EnglishBook = styled.img`
-  margin-top: 20px;
-  width: 460px;
-  height: 420px;
-  margin-left: 107px;
+const Description = styled(Typography)`
+  && {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #4a4a4a;
+    margin-bottom: 40px;
+  }
+`
 
-  animation: ${spin} 3s ease-in-out infinite;
+const ListContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  
+`
+
+const ListItem = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 20px;
+`
+
+const IconBox = styled.div`
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  img {
+    width: 100%;
+    height: auto;
+  }
+`
+
+const ListItemText = styled(Typography)`
+  && {
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+  }
+`
+
+const ImageSection = styled.div`
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+`
+
+const Illustration = styled.img`
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  animation: ${rotateAnimation} 5s ease-in-out infinite;
 `
