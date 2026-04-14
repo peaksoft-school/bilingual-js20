@@ -1,1 +1,3 @@
-export const App = () => <h1>Bilingual-js20</h1>
+import { UserExperience } from './components/landing/UserExperience'
+
+export const App = () => <UserExperience />

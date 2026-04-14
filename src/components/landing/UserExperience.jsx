@@ -1,6 +1,5 @@
 import styled, { keyframes } from 'styled-components'
 import { Typography } from '@mui/material'
-
 import english from '../../assets/icons/english.svg'
 import Accessible from '../../assets/icons/accessible.svg'
 import speech from '../../assets/icons/speech.svg'
@@ -57,8 +56,8 @@ const StyledMainContainer = styled.section`
   align-items: center;
   justify-content: space-between;
   background-color: #fdf5e9;
-  min-height: 100vh;
-  padding: 60px 10%;
+  height: 100vh;
+  padding: 60px 6%;
   gap: 50px;
 `
 
@@ -69,20 +68,23 @@ const StyledContentSection = styled.div`
 
 const StyledTitle = styled(Typography)`
   && {
-    font-size: 42px;
+    font-size: 43px;
     font-weight: 700;
     color: #3752b4;
     line-height: 1.2;
-    margin-bottom: 24px;
+    margin-bottom: 44px;
     font-family: 'Inter', sans-serif;
+    line-height: 100%;
+    letter-spacing: 0%;
   }
 `
 
 const StyledDescription = styled(Typography)`
   && {
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.6;
-    color: #4a4a4a;
+    font-weight: 400;
+    color: #23212a;
     margin-bottom: 40px;
   }
 `
@@ -90,7 +92,7 @@ const StyledDescription = styled(Typography)`
 const StyledListContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: 39px;
 `
 
 const StyledListItem = styled.div`
@@ -106,6 +108,7 @@ const StyledIconBox = styled.div`
   align-items: center;
   justify-content: center;
   cursor: pointer;
+
   img {
     width: 100%;
     height: auto;
@@ -129,7 +132,7 @@ const StyledImageSection = styled.div`
 
 const StyledIllustration = styled.img`
   width: 100%;
-  max-width: 500px;
+  max-width: 448px;
   height: auto;
   animation: ${rotateAnimation} 5s ease-in-out infinite;
 `
