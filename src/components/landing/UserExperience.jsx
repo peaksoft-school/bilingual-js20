@@ -21,38 +21,38 @@ export const UserExperience = () => {
   ]
 
   return (
-    <MainContainer>
-      <ContentSection>
-        <Title>Unparalleled user experience</Title>
+    <StyledMainContainer>
+      <StyledContentSection>
+        <StyledTitle>Unparalleled user experience</StyledTitle>
 
-        <Description>
+        <StyledDescription>
           The most effective way to perfect a language is by immersing yourself in it. Rosetta Stone
           for Enterprise delivers an effective end-to-end experience, founded on a wealth of
           carefully structured content. Each learner has the opportunity to balance independent
           study with optional online tutoring in a way that fits their schedule and language
           learning goals.
-        </Description>
+        </StyledDescription>
 
-        <ListContainer>
+        <StyledListContainer>
           {features.map((item, index) => (
-            <ListItem key={index}>
-              <IconBox>
+            <StyledListItem key={index}>
+              <StyledIconBox>
                 <img src={item.icon} alt={item.text} />
-              </IconBox>
-              <ListItemText>{item.text}</ListItemText>
-            </ListItem>
+              </StyledIconBox>
+              <StyledListItemText>{item.text}</StyledListItemText>
+            </StyledListItem>
           ))}
-        </ListContainer>
-      </ContentSection>
+        </StyledListContainer>
+      </StyledContentSection>
 
-      <ImageSection>
-        <Illustration src={english} alt="English Learning Illustration" />
-      </ImageSection>
-    </MainContainer>
+      <StyledImageSection>
+        <StyledIllustration src={english} alt="English Learning Illustration" />
+      </StyledImageSection>
+    </StyledMainContainer>
   )
 }
 
-const MainContainer = styled.section`
+const StyledMainContainer = styled.section`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -62,12 +62,12 @@ const MainContainer = styled.section`
   gap: 50px;
 `
 
-const ContentSection = styled.div`
+const StyledContentSection = styled.div`
   flex: 1;
   max-width: 600px;
 `
 
-const Title = styled(Typography)`
+const StyledTitle = styled(Typography)`
   && {
     font-size: 42px;
     font-weight: 700;
@@ -78,7 +78,7 @@ const Title = styled(Typography)`
   }
 `
 
-const Description = styled(Typography)`
+const StyledDescription = styled(Typography)`
   && {
     font-size: 16px;
     line-height: 1.6;
@@ -87,20 +87,19 @@ const Description = styled(Typography)`
   }
 `
 
-const ListContainer = styled.div`
+const StyledListContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
-  
 `
 
-const ListItem = styled.div`
+const StyledListItem = styled.div`
   display: flex;
   align-items: center;
   gap: 20px;
 `
 
-const IconBox = styled.div`
+const StyledIconBox = styled.div`
   width: 50px;
   height: 50px;
   display: flex;
@@ -113,7 +112,7 @@ const IconBox = styled.div`
   }
 `
 
-const ListItemText = styled(Typography)`
+const StyledListItemText = styled(Typography)`
   && {
     font-size: 18px;
     font-weight: 500;
@@ -121,14 +120,14 @@ const ListItemText = styled(Typography)`
   }
 `
 
-const ImageSection = styled.div`
+const StyledImageSection = styled.div`
   flex: 1;
   display: flex;
   justify-content: center;
   cursor: pointer;
 `
 
-const Illustration = styled.img`
+const StyledIllustration = styled.img`
   width: 100%;
   max-width: 500px;
   height: auto;
