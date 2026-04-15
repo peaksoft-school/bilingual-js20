@@ -1,26 +1,26 @@
 import { Box, Typography } from '@mui/material';
 import styled, { keyframes } from 'styled-components';
-import BooksImg from '../assets/icons/images/books.png';
-import HatImg from '../assets/icons/images/hat.png';
+import BooksImg from '../../assets/icons/images/books.png'
+import HatImg from '../../assets/icons/images/hat.png'
 
 
 
 export const Landing = () => {
   return (
-    <Wrapper>
+    <StyledWrapper>
       
-      <TextBlock>
+      <StyledTextBlock>
         <StyledTypography>Prove your English proficiency today with</StyledTypography>
         <StyledSpan>BILINGUAL</StyledSpan>
         <StyledPTeg component="p" variant="body1">
           For nearly 30 years, learners have turned to Rosetta Stone to build the fluency and
           confidence they need to speak new languages.
         </StyledPTeg>
-      </TextBlock>
+      </StyledTextBlock>
       <StyledImageOne src={HatImg} alt="Hat" />
      
       <StyledImage src={BooksImg} alt="Books" />
-    </Wrapper>
+    </StyledWrapper>
   )
 };
 
@@ -42,7 +42,7 @@ const slideInRight = keyframes`
 `;
 
 
-const Wrapper = styled.div`
+const StyledWrapper = styled.div`
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
@@ -67,41 +67,42 @@ const Wrapper = styled.div`
     background-image: url('/src/assets/icons/images/splash.png');
     background-repeat: no-repeat;
 
-    background-size: 1279px; /* контролирует размер пятен */
-    background-position: center; /* центр как в макете */
+    background-size: 1289px; 
+    background-position: center; 
 
     opacity: 0.4;
     pointer-events: none;
   }
 `
 
-const TextBlock = styled(Box)`
+const StyledTextBlock = styled(Box)`
   animation: ${fadeSlideDown} 1s ease-out forwards;
 `;
 
 const StyledTypography = styled(Typography)`
   font-family: 'Roboto', sans-serif; 
   font-size: 50px !important; 
-  font-weight: 600 !important; 
-  line-height: 1 !important; 
-  letter-spacing: -1px !important; 
+  font-weight: 700 !important; 
+  line-height: 1.2 !important; 
+  letter-spacing: 1.2px !important; 
+  gap: 10px;
   color: #43404e !important;
   padding: 122px 80px !important;
   width: 735px !important;
-  height: 190px !important;
-  margin-top: 20px !important;
+  height: 160px !important;
+  margin-top: 30px !important;
 `;
 
 const StyledSpan = styled.span`
-  font-family: 'Roboto', sans-serif;
-  font-size: 50px !important;
+  font-family: "Inter", 'Arial', sans-serif;
+  font-size: 40px !important;
   font-weight: 900 !important;
   line-height: 1 !important;
-  letter-spacing: -1px !important;
+  letter-spacing: 2% !important;
   color: #c93d7d !important;
   padding: 162px 80px !important;
-  width: 835px !important;
-  height: 290px !important;
+  width: 295px;
+  height: 75px;
 `;
 
 const StyledPTeg = styled(Typography)`
