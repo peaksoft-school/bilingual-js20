@@ -9,7 +9,7 @@ export const Checkbox = forwardRef(({ onChange, checked, disabled, ...rest }, re
     checked={checked}
     disabled={disabled}
     icon={<StyledIcon variant="span" />}
-    checkedIcon={<img src={CheckFillGreenIcon} alt="checked" width={"25px"}/>}
+    checkedIcon={<img src={CheckFillGreenIcon} alt="checked" width={'23px'} />}
     {...rest}
   />
 ))
@@ -23,8 +23,8 @@ const StyledCheckbox = styled(MuiCheckbox)({
 })
 
 const StyledIcon = styled(Typography)({
-  width: 22,
-  height: 22,
+  width: 23,
+  height: 23,
   border: '2px solid #9e9e9e',
   borderRadius: 4,
   backgroundColor: 'transparent',
