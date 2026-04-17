@@ -1,27 +1,22 @@
-import styled from 'styled-components'
-import bilingual from '../assets/images/bilingual.png'
-import "@fontsource/inter";
+import { styled, Typography } from '@mui/material'
+import { BilingualIcon } from '../assets/icons'
 
-function Footer() {
-  return (
-    <div>
-      <StyledDiv>
-        <img src={ bilingual } alt=""/>
-        <p>© 2022 Peaksoft</p>
-      </StyledDiv>
-    </div>
-  )
-}
+export const Footer = () => (
+  <StyledFooter>
+    <img src={BilingualIcon} alt="bilingual" width={98} />
 
-export default Footer
+    <Typography>© 2022 Peaksoft</Typography>
+  </StyledFooter>
+)
 
-const StyledDiv = styled.div`
-width: 100wv;
-display: flex;
-justify-content: center;
-align-items: center;
-height: 95px;
-gap: 1rem;
-font-family: inter;
-color: #98A2B3;
-`
+const StyledFooter = styled('footer')({
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'start',
+  gap: '1rem',
+  padding: '34px',
+
+  fontFamily: 'Gilroy',
+  color: '#98a2b3',
+  backgroundColor: 'white',
+})

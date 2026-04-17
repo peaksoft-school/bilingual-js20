@@ -4,6 +4,7 @@ import BluePauseIcon from './svgs/blue-pause.svg'
 import BluePlayPauseIcon from './svgs/blue-play-pause.svg'
 import CheckGrayIcon from './svgs/check-gray.svg'
 import CheckGreenIcon from './svgs/check-green.svg'
+import CheckFillGreenIcon from './svgs/check-fill-green.svg'
 import CheckIcon from './svgs/check.svg'
 import CloseCircleIcon from './svgs/close-circle.svg'
 import CloseIcon from './svgs/close.svg'
@@ -28,6 +29,7 @@ export {
   BilingualIcon,
   BluePauseIcon,
   BluePlayPauseIcon,
+  CheckFillGreenIcon,
   CheckGrayIcon,
   CheckGreenIcon,
   CheckIcon,

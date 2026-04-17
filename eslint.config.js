@@ -35,6 +35,7 @@ export default [
       'react/jsx-props-no-spreading': 'off',
       'react/function-component-definition': 'off',
       'react/prop-types': 'off',
+      'react/display-name': 'off',
 
       'import/prefer-default-export': 'off',
 
