@@ -1,66 +1,54 @@
-import React, { Component } from 'react'
+import { useEffect, useState } from 'react'
 import styled from 'styled-components'
+import { BilingualIcon } from '../assets/icons'
 
-import BilingualImg from '/src/assets/icons/images/bilingual.png'
+export const LandingHeader = () => {
+  const [scrolled, setScrolled] = useState(false)
 
-export class LandingHeader extends Component {
-  constructor(props) {
-    super(props)
-    this.state = { scrolled: false }
-  }
-
-  componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll)
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScroll)
-  }
-
-  handleScroll = () => {
+  const handleScroll = () => {
     const isScrolled = window.scrollY > 50
-    if (isScrolled !== this.state.scrolled) {
-      this.setState({ scrolled: isScrolled })
-    }
+
+    setScrolled(isScrolled)
   }
 
-  render() {
-    return (
-      <Header scrolled={this.state.scrolled}>
-        <Logo src={BilingualImg} alt="logo" />
-        <Nav>
-         
-        </Nav>
-      </Header>
-    )
-  }
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
+  return (
+    <StyledHeader scrolled={scrolled}>
+      <StyledLogo src={BilingualIcon} alt="logo" />
+
+      <StyledNav></StyledNav>
+    </StyledHeader>
+  )
 }
 
+const StyledHeader = styled.header(({ scrolled }) => ({
+  position: 'fixed',
+  top: 0,
+  left: 0,
+  width: '100%',
+  padding: '24px 80px',
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  zIndex: 999,
 
-const Header = styled.header`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 24px 80px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 999;
+  backgroundColor: scrolled ? '#ffffff' : '#FFD700',
+  transition: 'background-color 0.3s ease, box-shadow 0.3s ease',
+  boxShadow: scrolled ? '0 2px 10px rgba(0,0,0,0.1)' : 'none',
+}))
 
-  background-color: ${({ scrolled }) => (scrolled ? '#ffffff' : '#FFD700')};
-  transition:
-    background-color 0.3s ease,
-    box-shadow 0.3s ease;
-  box-shadow: ${({ scrolled }) => (scrolled ? '0 2px 10px rgba(0,0,0,0.1)' : 'none')};
-`
+const StyledLogo = styled.img({
+  height: '48px',
+})
 
-const Logo = styled.img`
- 
-  height: 48px;
-`
-
-const Nav = styled.nav`
-  display: flex;
-  gap: 15px;
-`
+const StyledNav = styled.nav({
+  display: 'flex',
+  gap: '15px',
+})

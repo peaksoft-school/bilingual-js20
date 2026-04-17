@@ -1,65 +1,59 @@
-
-import styled from 'styled-components'
-
+import { Box, styled, Typography } from '@mui/material'
 import BilingualImg from '../assets/icons/images/bilingual.png'
 
-
-export const Header = ({ role = 'client' }) => {
- 
-  const navText = role === 'admin' ? 'SUBMITTED RESULTS' : 'MY RESULTS'
+export const Header = () => {
+  const role = 'USER'
 
   return (
-    <HeaderWrapper>
-      <Content>
-        <Logo src={BilingualImg} alt="logo" />
+    <StyledHeaderWrapper>
+      <StyledContent>
+        <StyledLogo src={BilingualImg} alt="logo" />
 
-        <Nav>
-          <NavItem bold color="#0909f6">
-            TESTS
-          </NavItem>
+        <StyledNav>
+          <StyledNavItem bold>TESTS</StyledNavItem>
 
-          
-          <NavItem bold color="#4C4859" variant="results">
-            {navText}
-          </NavItem>
-
-          
-        </Nav>
-      </Content>
-    </HeaderWrapper>
+          <StyledNavItem bold color="#4C4859" variant="span">
+            {role === 'admin' ? 'SUBMITTED RESULTS' : 'MY RESULTS'}
+          </StyledNavItem>
+        </StyledNav>
+      </StyledContent>
+    </StyledHeaderWrapper>
   )
 }
 
+const StyledHeaderWrapper = styled(Box)({
+  width: '100%',
 
-const HeaderWrapper = styled.div`
-  width: 100%;
-  
-  background-color: #fff;
-`
+  backgroundColor: '#fff',
+})
 
-const Content = styled.div`
-  max-width: 1400px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 0px ;
-`
+const StyledContent = styled(Box)({
+  maxWidth: '1400px',
+  margin: '0 auto',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  padding: '20px 0px',
+})
 
-const Logo = styled.img`
-  width: 174px;
-  height: 42px;
-`
+const StyledLogo = styled('img')({
+  width: '174px',
+  height: '42px',
+})
 
-const Nav = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 32px;
-`
+const StyledNav = styled(Box)({
+  display: 'flex',
+  alignItems: 'center',
+  gap: '32px',
+})
 
-const NavItem = styled.span`
-  font-family: 'Inter', sans-serif; // 👈 новый шрифт
-  font-size: 14px;
-  font-weight: ${({ bold }) => (bold ? 700 : 400)};
-  color: ${({ color }) => color};
-`
+const StyledNavItem = styled(Typography)(({ bold }) => ({
+  fontFamily: 'Inter, sans-serif',
+  fontSize: '14px',
+  fontWeight: bold ? 700 : 400,
+
+  '&:hover': {
+    color: '#0909f6',
+    cursor: 'pointer',
+  },
+}))
