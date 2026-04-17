@@ -2,21 +2,20 @@ import { forwardRef } from 'react'
 import { TextField, styled } from '@mui/material'
 
 export const Input = forwardRef(
-  ({ label = 'Label', placeholder = 'text', value, onChange, error, disabled, ...rest }, ref) => {
-    return (
-      <StyledTextField
-        ref={ref}
-        label={label}
-        placeholder={placeholder}
-        value={value}
-        onChange={onChange}
-        variant="outlined"
-        error={error}
-        disabled={disabled}
-        {...rest}
-      />
-    )
-  }
+  ({ label, placeholder, value, type = 'text', onChange, error, disabled, ...rest }, ref) => (
+    <StyledTextField
+      ref={ref}
+      label={label}
+      placeholder={placeholder}
+      type={type}
+      value={value}
+      onChange={onChange}
+      variant="outlined"
+      error={error}
+      disabled={disabled}
+      {...rest}
+    />
+  )
 )
 
 const StyledTextField = styled(TextField)(() => ({

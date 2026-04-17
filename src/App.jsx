@@ -1,1 +1,1 @@
-export const App = () => 'Bilingual-JS20'
+export const App = () => <h1>Bilingual</h1>
