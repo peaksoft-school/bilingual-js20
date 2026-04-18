@@ -1,13 +1,9 @@
-import React from "react";
-import "./App.css";
-import Switch from "./components/UI/Switch";
+import { PromoBanner } from "./components/landing/PromoBanner";
 
-function App() {
+export const App = () => {
   return (
-    <div>
-      <Switch/>
-    </div>
+    <>
+      <PromoBanner />
+    </>
   );
-}
-
-export default App;
+};
