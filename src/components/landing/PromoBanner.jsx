@@ -56,7 +56,7 @@ export const PromoBanner = () => {
       <StyledTitle>Check out each question type</StyledTitle>
 
       <CarouselWrapper>
-        <SliderContainer index={index}>
+        <SliderContainer $index={index}>
           {data.map((item, i) => (
             <StyledContent key={i} bg={item.cardBg}>
               <TextSection>
@@ -124,7 +124,7 @@ const SliderContainer = styled.div`
   display: flex;
   gap: 40px;
   transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-  transform: ${(props) => `translateX(-${props.index * 1068}px)`};
+  transform: ${(props) => `translateX(-${props.$index * 1068}px)`};
 `
 
 const StyledContent = styled(Box)`
