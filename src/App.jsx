@@ -1,9 +1,3 @@
-import { PromoBanner } from "./components/landing/PromoBanner";
-
 export const App = () => {
-  return (
-    <>
-      <PromoBanner />
-    </>
-  );
-};
+  return <h1>Bilingual-js20</h1>
+}
