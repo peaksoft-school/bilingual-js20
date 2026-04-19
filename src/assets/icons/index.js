@@ -1,3 +1,6 @@
+import World from '../icons/svgs/world.svg'
+import LeftArrow from '../icons/svgs/left-arrow.svg'
+import RightArrow from '../icons/svgs/right-arrow.svg'
 import AverageSoundIcon from './svgs/average-sound.svg'
 import BilingualIcon from './svgs/bilingual.svg'
 import BluePauseIcon from './svgs/blue-pause.svg'
@@ -50,4 +53,7 @@ export {
   ViewIcon,
   VolumePrimaryIcon,
   VolumeSecondaryIcon,
+  World,
+  LeftArrow,
+  RightArrow,
 }
