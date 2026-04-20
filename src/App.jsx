@@ -1,3 +1,1 @@
-import { LandingHeader } from './layout/LandingHeader'
-
-export const App = () => <LandingHeader />
+export const App = () => <h1>Bilingual20</h1>
