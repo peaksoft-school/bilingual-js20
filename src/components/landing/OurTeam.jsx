@@ -1,10 +1,10 @@
 import styled from 'styled-components'
-import Alice from '../../assets/imgs/Img_1.jpg'
-import Mia from '../../assets/imgs/Img_2.jpg'
-import Oscar from '../../assets/imgs/Img_3.jpg'
-import Jack from '../../assets/imgs/Img_4.jpg'
-import Rose from '../../assets/imgs/Img_5.jpg'
-import Albert from '../../assets/imgs/Img_6.jpg'
+import Alice from '../../assets/imgs/img_1.jpg'
+import Mia from '../../assets/imgs/img_2.jpg'
+import Oscar from '../../assets/imgs/img_3.jpg'
+import Jack from '../../assets/imgs/img_4.jpg'
+import Rose from '../../assets/imgs/img_5.jpg'
+import Albert from '../../assets/imgs/img_6.jpg'
 
 function OurTeam() {
   const members = [
@@ -121,15 +121,15 @@ const StyledPhoto = styled.div`
   height: 180px;
   flex-shrink: 0;
   background-color: coral;
-  background-image: ${({ bg }) => (bg ? `url(${bg})` : 'none')};
+  background-image: ${({ $bg }) => ($bg ? `url(${$bg})` : 'none')};
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
-  border-top-left-radius: ${({ tl }) => tl || '0'};
-  border-top-right-radius: ${({ tr }) => tr || '0'};
-  border-bottom-right-radius: ${({ br }) => br || '0'};
-  border-bottom-left-radius: ${({ bl }) => bl || '0'};
+  border-top-left-radius: ${({ $tl }) => $tl || '0'};
+  border-top-right-radius: ${({ $tr }) => $tr || '0'};
+  border-bottom-right-radius: ${({ $br }) => $br || '0'};
+  border-bottom-left-radius: ${({ $bl }) => $bl || '0'};
 `
 
 const StyledInfo = styled.div`
