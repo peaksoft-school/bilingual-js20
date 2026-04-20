@@ -21,6 +21,7 @@ const StyledButton = styled(ButtonMUI, {
   borderRadius: 8,
   fontWeight: 500,
   fontSize: 14,
+  fontFamily: 'Poppins',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
@@ -32,8 +33,6 @@ const StyledButton = styled(ButtonMUI, {
 
 const variantStyles = {
   primary: (disabled) => ({
-    width: 174,
-    height: 42,
     margin: ' 0px, auto',
     background: disabled ? 'transparent' : '#3A10E5',
     color: disabled ? '#a0a0a0' : 'white',
@@ -43,8 +42,6 @@ const variantStyles = {
   }),
 
   success: (disabled) => ({
-    width: 82,
-    height: 42,
     background: disabled ? 'transparent' : '#2AB930',
     color: disabled ? '#a0a0a0' : 'white',
     border: `2px solid ${disabled ? '#e0e0e0' : '#2AB930'}`,
@@ -53,9 +50,7 @@ const variantStyles = {
   }),
 
   outline: (disabled) => ({
-    width: 114,
-    height: 42,
-    background: 'transparent',
+    background: 'white',
     color: disabled ? '#bdbdbd' : '#4C4859',
     border: `2px solid ${disabled ? '#e0e0e0' : '#4C4859'}`,
 
@@ -66,8 +61,6 @@ const variantStyles = {
   }),
 
   secondary: (disabled) => ({
-    width: 100,
-    height: 42,
     background: '#ffffff',
     color: disabled ? '#bdbdbd' : '#3a10e5',
     border: `2px solid ${disabled ? '#e0e0e0' : '#3a10e5'}`,
@@ -79,8 +72,6 @@ const variantStyles = {
   }),
 
   default: (disabled) => ({
-    width: 115,
-    height: 42,
     background: '#ffffff',
     color: disabled ? '#bdbdbd' : '#3a10e5',
     border: `2px solid ${disabled ? '#e0e0e0' : '#3a10e5'}`,
@@ -92,8 +83,6 @@ const variantStyles = {
   }),
 
   unknown: (disabled) => ({
-    width: 142,
-    height: 42,
     background: disabled ? '#e0e0e0' : '#3a10e5',
     color: disabled ? '#a0a0a0' : '#ffffff',
 
@@ -101,8 +90,6 @@ const variantStyles = {
   }),
 
   rpaction: (disabled) => ({
-    width: 168,
-    height: 42,
     background: '#ffffff',
     color: disabled ? '#bdbdbd' : '#3a10e5',
     border: `2px solid ${disabled ? '#e0e0e0' : '#3a10e5'}`,
@@ -114,8 +101,6 @@ const variantStyles = {
   }),
 
   logout: (disabled) => ({
-    width: 500,
-    height: 52,
     background: disabled ? '#e0e0e0' : '#3a10e5',
     color: disabled ? '#a0a0a0' : '#ffffff',
 
@@ -123,8 +108,6 @@ const variantStyles = {
   }),
 
   filled: (disabled) => ({
-    width: 120,
-    height: 42,
     background: disabled ? '#e0e0e0' : '#FFFFFF',
     color: disabled ? '#a0a0a0' : '#4C4C4C',
     boxShadow: '0 1px 2px #4C485933',
