@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { BilingualIcon } from '../assets/icons'
+import { Button } from '../components/ui/buttons/Button'
 
 export const LandingHeader = () => {
   const [scrolled, setScrolled] = useState(false)
@@ -23,7 +24,10 @@ export const LandingHeader = () => {
     <StyledHeader scrolled={scrolled}>
       <StyledLogo src={BilingualIcon} alt="logo" />
 
-      <StyledNav></StyledNav>
+      <StyledNav>
+        <Button>TO COME IN</Button>
+        <Button variant="filled">REGISTER</Button>
+      </StyledNav>
     </StyledHeader>
   )
 }
