@@ -26,6 +26,10 @@ import PlayCircleBlueIcon from './svgs/play-circle-blue.svg'
 import ViewIcon from './svgs/view.svg'
 import VolumePrimaryIcon from './svgs/volume-primary.svg'
 import VolumeSecondaryIcon from './svgs/volume-secondary.svg'
+import Aibek from './svgs/aibek.svg'
+import Alina from './svgs/alina.svg'
+import Minura from './svgs/minura.svg'
+import Start from './svgs/start.svg'
 
 export {
   AverageSoundIcon,
@@ -56,4 +60,8 @@ export {
   World,
   LeftArrow,
   RightArrow,
+  Aibek,
+  Alina,
+  Minura,
+  Start,
 }
