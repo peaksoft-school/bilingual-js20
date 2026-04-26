@@ -1,9 +1,1 @@
-export const App = () => {
-  return (
-    <>
-      <div>
-        <h1>App</h1>
-      </div>
-    </>
-  )
-}
+export const App = () => <h1>Biligual-js20</h1>

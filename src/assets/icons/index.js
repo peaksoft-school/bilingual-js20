@@ -22,7 +22,6 @@ import PlayCircleBlueIcon from './svgs/play-circle-blue.svg'
 import ViewIcon from './svgs/view.svg'
 import VolumePrimaryIcon from './svgs/volume-primary.svg'
 import VolumeSecondaryIcon from './svgs/volume-secondary.svg'
-import LineErrorToas from './svgs/line-error-toas.svg'
 
 export {
   AverageSoundIcon,
@@ -49,5 +48,4 @@ export {
   ViewIcon,
   VolumePrimaryIcon,
   VolumeSecondaryIcon,
-  LineErrorToas,
 }
