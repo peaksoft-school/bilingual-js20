@@ -1,75 +1,106 @@
 import toast from 'react-hot-toast'
-import { X, CheckCircle } from 'lucide-react'
-import styled from 'styled-components'
+import { CheckCircle, X } from 'lucide-react'
+import { Box, Button, Typography, keyframes, styled } from '@mui/material'
 
-const showNotification = ({ type = 'success', title, description, duration = 3000 }) => {
+export const showNotification = ({ type = 'success', title, description, duration = 3000 }) => {
   toast.custom(
     (t) => (
-      <Box $type={type}>
-        {type === 'success' && <CheckCircle color="green" size={23} />}
-        {type === 'error' && <ErrorBar />}
-        <Content>
-          <StyledText>{title}</StyledText>
-          {description && <StyledP>{description}</StyledP>}
-        </Content>
-        <StyledX onClick={() => toast.dismiss(t.id)} />
-      </Box>
+      <StyledBox $type={type} $visible={t.visible}>
+        {type === 'success' ? <CheckCircle color="#52c41a" size={22} /> : <StyledErrorBar />}
+
+        <StyledContent>
+          <StyledTitle>{title}</StyledTitle>
+          {description && <StyledDescription>{description}</StyledDescription>}
+        </StyledContent>
+
+        <StyledCloseButton onClick={() => toast.dismiss(t.id)}>
+          <X size={16} />
+        </StyledCloseButton>
+
+        <StyledProgressBar $type={type} $duration={duration} />
+      </StyledBox>
     ),
     { duration }
   )
 }
 
-export default showNotification
-
-const Box = styled.div`
-  border-radius: 8px;
-  width: 311px;
-  min-height: 93px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 16px;
-  position: relative;
-  background-color: ${({ $type }) => ($type === 'error' ? '#fff1f0' : '#f6ffed')};
-  border: 1px solid ${({ $type }) => ($type === 'error' ? '#F6141466' : '#52c41a66')};
+//
+// 🎬 Animations
+//
+const slideIn = keyframes`
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0); }
 `
 
-const ErrorBar = styled.div`
-  width: 4px;
-  height: 50px;
-  background-color: #f61414;
-  border-radius: 4px;
-  flex-shrink: 0;
+const slideOut = keyframes`
+  from { opacity: 1; transform: translateX(0); }
+  to   { opacity: 0; transform: translateX(40px); }
 `
 
-const Content = styled.div`
-  flex: 1;
+const progressShrink = keyframes`
+  from { width: 100%; }
+  to   { width: 0%; }
 `
 
-const StyledText = styled.h3`
-  width: 93px;
-  height: 18px;
-  top: 51px;
-  left: 60px;
-  margin: 0;
-`
+//
+// 📦 Styled components
+//
 
-const StyledP = styled.p`
-  width: 152px;
-  height: 18px;
-  top: 51px;
-  left: 60px;
-  margin-top: 10px;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 100%;
-  letter-spacing: 0;
-`
+const StyledBox = styled(Box, {
+  shouldForwardProp: (prop) => prop !== '$type' && prop !== '$visible',
+})(({ $type, $visible }) => ({
+  borderRadius: '10px',
+  width: '320px',
+  minHeight: '72px',
+  display: 'flex',
+  alignItems: 'flex-start',
+  gap: '12px',
+  padding: '14px 16px',
+  position: 'relative',
+  boxShadow: '0 4px 16px rgba(0,0,0,0.1)',
+  backgroundColor: $type === 'error' ? '#fff1f0' : '#f6ffed',
+  border: `1px solid ${$type === 'error' ? '#ffa39e' : '#b7eb8f'}`,
+  animation: `${$visible ? slideIn : slideOut} 0.25s ease forwards`,
+}))
 
-const StyledX = styled(X)`
-  width: 24px;
-  height: 24px;
-  margin-left: 30px;
-  margin-bottom: 50px;
-  cursor: pointer;
-`
+const StyledErrorBar = styled(Box)({
+  width: '4px',
+  height: '44px',
+  backgroundColor: '#f61414',
+  borderRadius: '4px',
+})
+
+const StyledContent = styled(Box)({
+  flex: 1,
+})
+
+const StyledTitle = styled(Typography)({
+  fontSize: '15px',
+  fontWeight: 500,
+  color: '#1a1a1a',
+})
+
+const StyledDescription = styled(Typography)({
+  fontSize: '13px',
+  color: '#555',
+})
+
+const StyledCloseButton = styled(Button)({
+  position: 'absolute',
+  top: '8px',
+  right: '8px',
+  minWidth: 'auto',
+  padding: '4px',
+})
+
+const StyledProgressBar = styled(Box, {
+  shouldForwardProp: (prop) => prop !== '$type' && prop !== '$duration',
+})(({ $type, $duration }) => ({
+  position: 'absolute',
+  bottom: 0,
+  left: 0,
+  height: '3px',
+  width: '100%',
+  background: $type === 'error' ? '#f61414' : '#52c41a',
+  animation: `${progressShrink} ${$duration}ms linear forwards`,
+}))

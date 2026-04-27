@@ -8,7 +8,7 @@
 }
 
 @font-face {
-  font-family: 'Gilroy';
+  font-family: 'Roboto', sans-serif;
   src: url('./assets/fonts/Gilroy-Bold.woff2') format('woff2');
   font-weight: 700;
 }
