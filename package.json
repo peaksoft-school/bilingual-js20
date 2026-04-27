@@ -17,8 +17,11 @@
     "@fontsource/inter": "^5.2.8",
     "@mui/icons-material": "^7.3.9",
     "@mui/material": "^7.3.9",
+    "lucide-react": "^1.7.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "react-hot-toast": "^2.6.0",
+    "react-toastify": "^11.0.5",
     "styled-components": "^6.3.12"
   },
   "devDependencies": {
