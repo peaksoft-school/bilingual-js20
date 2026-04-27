@@ -70,31 +70,33 @@ export const LandingTwo = () => {
           ))}
         </SkyLayer>
 
-        {/* 🔵 ВНЕШНЯЯ РАМКА */}
         <BorderLine src={BorderLineImg} alt="border" />
 
-        {/* 🔵 КАРТОЧКА */}
         <Card initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
           <Title>{formatted}+</Title>
         </Card>
       </Container>
+
+      <Description>
+        Over 10,000 fee waivers for the Bilingual English Test are offered annually.
+      </Description>
     </Wrapper>
   )
 }
 
 const Wrapper = styled.div`
   position: relative;
-  width: 200px;
-  height: 120px;
+  width: 300px;
 
   display: flex;
-  justify-content: start;
+  flex-direction: column;
+  align-items: center;
 `
 
 const Container = styled.div`
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 140px;
   overflow: hidden;
 `
 
@@ -125,7 +127,6 @@ const Warp = styled.img`
   height: 20px;
 
   z-index: 0;
-  pointer-events: none;
 `
 
 const PlaneIcon = styled.img`
@@ -135,40 +136,36 @@ const PlaneIcon = styled.img`
 
   width: 32px;
   height: 23px;
-  filter: brightness(1) invert(0);
   opacity: 0.6;
   z-index: 1;
 `
-
 
 const BorderLine = styled.img`
   position: absolute;
   top: 50%;
   left: 50%;
 
-  width: 200px;
-  height: 95px;
+  width: 178px;
+  height: 99px;
 
-  
   transform: translate(-50%, -50%);
- 
-
   z-index: 5;
   pointer-events: none;
 `
 
-
 const Card = styled(motion.div)`
   position: absolute;
   z-index: 10;
-  width: 195px;
+  width: 165px;
   height: 78px;
 
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 
-  padding: 12px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   background: white;
   border-radius: 12px;
@@ -178,6 +175,16 @@ const Card = styled(motion.div)`
 `
 
 const Title = styled.h1`
-  font-size: 42px;
+  font-size: 45px;
   margin: 0;
+`
+
+const Description = styled.p`
+  margin-top: 12px;
+  font-size: 16px;
+  text-align: start;
+  color: #23212a;
+  font-weight: 100;
+  width: 256px;
+  height: 48px;
 `
