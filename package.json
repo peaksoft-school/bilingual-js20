@@ -17,6 +17,8 @@
     "@fontsource/inter": "^5.2.8",
     "@mui/icons-material": "^7.3.9",
     "@mui/material": "^7.3.9",
+    "countup.js": "^2.10.0",
+    "framer-motion": "^12.38.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "styled-components": "^6.3.12"
