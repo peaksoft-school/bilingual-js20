@@ -24,9 +24,6 @@ export const showNotification = ({ type = 'success', title, description, duratio
   )
 }
 
-//
-// 🎬 Animations
-//
 const slideIn = keyframes`
   from { opacity: 0; transform: translateX(40px); }
   to   { opacity: 1; transform: translateX(0); }
@@ -41,10 +38,6 @@ const progressShrink = keyframes`
   from { width: 100%; }
   to   { width: 0%; }
 `
-
-//
-// 📦 Styled components
-//
 
 const StyledBox = styled(Box, {
   shouldForwardProp: (prop) => prop !== '$type' && prop !== '$visible',
