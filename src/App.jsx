@@ -1,4 +1,19 @@
+import {LandingFooter} from "./landing/LandingFooter";
+import { LandingFooterFaq } from './landing/LandingFooterFaq'
+import styled from "styled-components";
+import "./index.css"
 
+export const App = () => {
+  return (
+    <Container>
+      <LandingFooterFaq />
+      <LandingFooter />
+    </Container>
+  )
+}
 
-export const App = () => <h1>Bilingual20</h1>
-
+const Container = styled.div`
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+`
