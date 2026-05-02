@@ -7,6 +7,16 @@
   font-family: 'Poppins', sans-serif;
 }
 
+body {
+  padding: 0%;
+  margin: 0%;
+box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
 @font-face {
   font-family: 'Gilroy';
   src: url('./assets/fonts/Gilroy-Bold.woff2') format('woff2');
