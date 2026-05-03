@@ -16,6 +16,7 @@ import EditGrayIcon from './svgs/edit-gray.svg'
 import ExclamationIcon from './svgs/exclamation.svg'
 import HideIcon from './svgs/hide.svg'
 import LogoIcon from './svgs/logo.svg'
+import Google from './svgs/google.svg'
 import PauseCircleBlueIcon from './svgs/pause-circle-blue.svg'
 import PauseGrayIcon from './svgs/pause-gray.svg'
 import PausedWhiteIcon from './svgs/paused-white.svg'
@@ -43,6 +44,7 @@ export {
   ExclamationIcon,
   HideIcon,
   LogoIcon,
+  Google,
   PauseCircleBlueIcon,
   PauseGrayIcon,
   PausedWhiteIcon,
