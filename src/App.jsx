@@ -1,1 +1,3 @@
-export const App = () => <h1>Bilingual20</h1>
+import Partners from './landing/Partners'
+
+export const App = () => <Partners />
