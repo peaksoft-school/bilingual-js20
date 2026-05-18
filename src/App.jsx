@@ -1,5 +1,3 @@
+import { LearnMore } from './components/landing/LearnMore'
 
-
-export const App = () => <h1>Bilingual20</h1>
-
-
+export const App = () => <LearnMore />
