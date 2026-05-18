@@ -1,3 +1,1 @@
-import { LearnMore } from './components/landing/LearnMore'
-
-export const App = () => <LearnMore />
+export const App = () => <h1>Bilingual-js-20</h1>
