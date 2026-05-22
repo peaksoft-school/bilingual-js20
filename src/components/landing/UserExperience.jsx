@@ -1,16 +1,6 @@
 import { Box, Typography, keyframes, styled } from '@mui/material'
-import english from '../../assets/icons/english.svg'
-import Accessible from '../../assets/icons/accessible.svg'
-import speech from '../../assets/icons/speech.svg'
-import extensive from '../../assets/icons/extensive.svg'
-import tutoring from '../../assets/icons/tutoring.svg'
-
-const USER_EXPERIENCE_DATA = [
-  { icon: Accessible, text: 'Accessible anytime, anywhere' },
-  { icon: extensive, text: 'Extensive business content' },
-  { icon: speech, text: 'Leading speech recognition' },
-  { icon: tutoring, text: 'Unlimited live tutoring' },
-]
+import { USER_EXPERIENCE_DATA } from '../../utils/constants'
+import { BookIcon } from '../../assets/icons'
 
 export const UserExperience = () => (
   <StyledMainContainer>
@@ -38,7 +28,7 @@ export const UserExperience = () => (
     </StyledContentSection>
 
     <StyledImageSection>
-      <StyledIllustration src={english} alt="English Learning Illustration" />
+      <StyledIllustration src={BookIcon} alt="English Learning Illustration" />
     </StyledImageSection>
   </StyledMainContainer>
 )
