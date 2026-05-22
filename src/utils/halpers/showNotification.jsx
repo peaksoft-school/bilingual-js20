@@ -16,8 +16,6 @@ export const showNotification = ({ type = 'success', title, description, duratio
         <StyledCloseButton onClick={() => toast.dismiss(t.id)}>
           <X size={16} />
         </StyledCloseButton>
-
-        <StyledProgressBar $type={type} $duration={duration} />
       </StyledBox>
     ),
     { duration }
@@ -32,11 +30,6 @@ const slideIn = keyframes`
 const slideOut = keyframes`
   from { opacity: 1; transform: translateX(0); }
   to   { opacity: 0; transform: translateX(40px); }
-`
-
-const progressShrink = keyframes`
-  from { width: 100%; }
-  to   { width: 0%; }
 `
 
 const StyledBox = styled(Box, {
@@ -85,15 +78,3 @@ const StyledCloseButton = styled(Button)({
   minWidth: 'auto',
   padding: '4px',
 })
-
-const StyledProgressBar = styled(Box, {
-  shouldForwardProp: (prop) => prop !== '$type' && prop !== '$duration',
-})(({ $type, $duration }) => ({
-  position: 'absolute',
-  bottom: 0,
-  left: 0,
-  height: '3px',
-  width: '100%',
-  background: $type === 'error' ? '#f61414' : '#52c41a',
-  animation: `${progressShrink} ${$duration}ms linear forwards`,
-}))

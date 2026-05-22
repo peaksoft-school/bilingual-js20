@@ -23,6 +23,11 @@ import PlayCircleBlueIcon from './svgs/play-circle-blue.svg'
 import ViewIcon from './svgs/view.svg'
 import VolumePrimaryIcon from './svgs/volume-primary.svg'
 import VolumeSecondaryIcon from './svgs/volume-secondary.svg'
+import AccessibleIcon from './svgs/accessible.svg'
+import SpeechIcon from './svgs/speech.svg'
+import ExtensiveIcon from './svgs/extensive.svg'
+import TutoringIcon from './svgs/tutoring.svg'
+import BookIcon from './svgs/english.svg'
 
 export {
   AverageSoundIcon,
@@ -50,4 +55,9 @@ export {
   ViewIcon,
   VolumePrimaryIcon,
   VolumeSecondaryIcon,
+  AccessibleIcon,
+  SpeechIcon,
+  ExtensiveIcon,
+  TutoringIcon,
+  BookIcon,
 }

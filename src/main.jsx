@@ -7,6 +7,7 @@ import { Notification } from './components/ui/toast/Notification.jsx'
 createRoot(document.getElementById('root')).render(
   <Themes>
     <App />
+
     <Notification />
   </Themes>
 )
