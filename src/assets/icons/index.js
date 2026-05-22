@@ -4,6 +4,7 @@ import BluePauseIcon from './svgs/blue-pause.svg'
 import BluePlayPauseIcon from './svgs/blue-play-pause.svg'
 import CheckGrayIcon from './svgs/check-gray.svg'
 import CheckGreenIcon from './svgs/check-green.svg'
+import CheckFillGreenIcon from './svgs/check-fill-green.svg'
 import CheckIcon from './svgs/check.svg'
 import CloseCircleIcon from './svgs/close-circle.svg'
 import CloseIcon from './svgs/close.svg'
@@ -22,12 +23,18 @@ import PlayCircleBlueIcon from './svgs/play-circle-blue.svg'
 import ViewIcon from './svgs/view.svg'
 import VolumePrimaryIcon from './svgs/volume-primary.svg'
 import VolumeSecondaryIcon from './svgs/volume-secondary.svg'
+import AccessibleIcon from './svgs/accessible.svg'
+import SpeechIcon from './svgs/speech.svg'
+import ExtensiveIcon from './svgs/extensive.svg'
+import TutoringIcon from './svgs/tutoring.svg'
+import BookIcon from './svgs/english.svg'
 
 export {
   AverageSoundIcon,
   BilingualIcon,
   BluePauseIcon,
   BluePlayPauseIcon,
+  CheckFillGreenIcon,
   CheckGrayIcon,
   CheckGreenIcon,
   CheckIcon,
@@ -48,4 +55,9 @@ export {
   ViewIcon,
   VolumePrimaryIcon,
   VolumeSecondaryIcon,
+  AccessibleIcon,
+  SpeechIcon,
+  ExtensiveIcon,
+  TutoringIcon,
+  BookIcon,
 }
