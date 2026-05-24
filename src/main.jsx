@@ -10,5 +10,12 @@ createRoot(document.getElementById('root')).render(
     <Provider store={store}>
       <App />
     </Provider>
+import { Notification } from './components/ui/toast/Notification.jsx'
+
+createRoot(document.getElementById('root')).render(
+  <Themes>
+    <App />
+
+    <Notification />
   </Themes>
 )
