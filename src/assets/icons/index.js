@@ -1,3 +1,6 @@
+import World from '../icons/svgs/world.svg'
+import LeftArrow from '../icons/svgs/left-arrow.svg'
+import RightArrow from '../icons/svgs/right-arrow.svg'
 import AverageSoundIcon from './svgs/average-sound.svg'
 import BilingualIcon from './svgs/bilingual.svg'
 import BluePauseIcon from './svgs/blue-pause.svg'
@@ -23,6 +26,10 @@ import PlayCircleBlueIcon from './svgs/play-circle-blue.svg'
 import ViewIcon from './svgs/view.svg'
 import VolumePrimaryIcon from './svgs/volume-primary.svg'
 import VolumeSecondaryIcon from './svgs/volume-secondary.svg'
+import Aibek from './svgs/aibek.svg'
+import Alina from './svgs/alina.svg'
+import Minura from './svgs/minura.svg'
+import Start from './svgs/start.svg'
 import AccessibleIcon from './svgs/accessible.svg'
 import SpeechIcon from './svgs/speech.svg'
 import ExtensiveIcon from './svgs/extensive.svg'
@@ -55,6 +62,13 @@ export {
   ViewIcon,
   VolumePrimaryIcon,
   VolumeSecondaryIcon,
+  World,
+  LeftArrow,
+  RightArrow,
+  Aibek,
+  Alina,
+  Minura,
+  Start,
   AccessibleIcon,
   SpeechIcon,
   ExtensiveIcon,
